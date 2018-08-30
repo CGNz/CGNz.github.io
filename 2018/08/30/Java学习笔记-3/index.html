@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    
+    <title>Java学习笔记-3 | CGNz&#39;s blog | 鸿鹄安知燕雀之志</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="Java,Spring">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="/css/style.css?v=1.2.8">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"CGNz","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+</head>
+
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
+      
+      <img src="/img/brand.jpg" class="brand-bg">
+      
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CGnz</h5>
+          <a href="mailto:625897746@qq.com" title="625897746@qq.com" class="mail">
+            
+              <span>6</span>
+            
+              <span>2</span>
+            
+              <span>5</span>
+            
+              <span>8</span>
+            
+              <span>9</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>6</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
+        
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/CGNz" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
+        
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>Java学习笔记-3</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">Java学习笔记-3</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-08-30T05:20:55.000Z" itemprop="datePublished" class="page-time">
+  2018-08-30
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/IT/">IT</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
+    
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-Java学习笔记-3"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">Java学习笔记-3</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-08-30 13:20:55" datetime="2018-08-30T05:20:55.000Z"  itemprop="datePublished">2018-08-30</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/IT/">IT</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <h1 id="HTTP协议-POST和GET的区别"><a href="#HTTP协议-POST和GET的区别" class="headerlink" title="HTTP协议 POST和GET的区别"></a>HTTP协议 POST和GET的区别</h1><p><a href="http://www.cnblogs.com/hyddd/archive/2009/03/31/1426026.html" target="_blank" rel="noopener">浅谈HTTP中Get与Post的区别</a></p>
+<ul>
+<li>Http定义了与服务器交互的不同方法，最基本的方法有4种，分别是GET，POST，PUT，DELETE。URL全称是资源描述符，我们可以这样认为：一个URL地址，它用于描述一个网络上的资源，而HTTP中的GET，POST，PUT，DELETE就对应着对这个资源的查，改，增，删4个操作。</li>
+<li>GET一般用于获取/查询资源信息，而POST一般用于更新资源信息。</li>
+</ul>
+<h2 id="原理性的区别"><a href="#原理性的区别" class="headerlink" title="原理性的区别"></a>原理性的区别</h2><h3 id="GET-安全与幂等"><a href="#GET-安全与幂等" class="headerlink" title="GET 安全与幂等"></a>GET 安全与幂等</h3><p>根据HTTP规范，GET用于信息获取，而且应该是安全的和幂等的。</p>
+<p>(1) 所谓安全的意味着该操作用于获取信息而非修改信息。换句话说，GET 请求一般不应产生副作用。就是说，它仅仅是获取资源信息，就像数据库查询一样，不会修改，增加数据，不会影响资源的状态。</p>
+<p>(2) 幂等的意味着对同一URL的多个请求应该返回同样的结果。</p>
+<p>但在实际应用中，以上2条规定并没有这么严格。引用别人文章的例子：比如，新闻站点的头版不断更新。虽然第二次请求会返回不同的一批新闻，该操作仍然被认为是安全的和幂等的，因为它总是返回当前的新闻。从根本上说，如果目标是当用户打开一个链接时，他可以确信从自身的角度来看没有改变资源即可。</p>
+<h3 id="POST-可能修改服务器上的资源请求"><a href="#POST-可能修改服务器上的资源请求" class="headerlink" title="POST 可能修改服务器上的资源请求"></a>POST 可能修改服务器上的资源请求</h3><ul>
+<li>继续引用上面的例子：还是新闻以网站为例，读者对新闻发表自己的评论应该通过POST实现，因为在评论提交后站点的资源已经不同了，或者说资源被修改了。</li>
+</ul>
+<h2 id="应用上的区别"><a href="#应用上的区别" class="headerlink" title="应用上的区别"></a>应用上的区别</h2><p><strong>说完原理性的问题，我们再从表面现像上面看看GET和POST的区别：</strong></p>
+<p>1.GET请求的数据会附在URL之后（就是把数据放置在HTTP协议头中），以?分割URL和传输数据，参数之间以&amp;相连，如：</p>
+<blockquote>
+<p>login.action?name=hyddd&amp;password=idontknow&amp;verify=%E4%BD%A0%E5%A5%BD。</p>
+</blockquote>
+<p>如果数据是英文字母/数字，原样发送，如果是空格，转换为+，如果是中文/其他字符，则直接把字符串用BASE64加密，得出如：%E4%BD%A0%E5%A5%BD，其中％XX中的XX为该符号以16进制表示的ASCII。</p>
+<p>POST把提交的数据则放置在是HTTP包的包体中。</p>
+<p>2.”GET方式提交的数据最多只能是1024字节，理论上POST没有限制，可传较大量的数据。</p>
+<p>3.在ASP中，服务端获取GET请求参数用Request.QueryString；获取POST请求参数用Request.Form。在JSP中，用request.getParameter(\”XXXX\”)来获取，虽然jsp中也有request.getQueryString()方法，但使用起来比较麻烦，比如：传一个<code>test.jsp?name=hyddd&amp;password=hyddd</code>，用request.getQueryString()得到的是：<code>name=hyddd&amp;password=hyddd</code>。</p>
+<p>4.POST的安全性要比GET的安全性高。</p>
+<p>注意：这里所说的安全性和上面GET提到的“安全”不是同个概念。上面“安全”的含义仅仅是不作数据修改，而这里安全的含义是真正的Security的含义，比如：通过GET提交数据，用户名和密码将明文出现在URL上，因为：</p>
+<p>(1)登录页面有可能被浏览器缓存；</p>
+<p>(2)其他人查看浏览器的历史纪录，那么别人就可以拿到你的账号和密码了。</p>
+<p>除此之外，使用GET提交数据还可能会造成Cross-site request forgery攻击。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>总结一下，Get是<strong>向服务器发索取数据的一种请求</strong>，而Post是<strong>向服务器提交数据的一种请求</strong>，在FORM（表单）中，Method默认为”GET”，实质上，GET和POST只是发送机制不同，并不是一个取一个发。</p>
+<h1 id="Java对象的生命周期"><a href="#Java对象的生命周期" class="headerlink" title="Java对象的生命周期"></a>Java对象的生命周期</h1><p><a href="https://blog.csdn.net/moneyshi/article/details/53033578" target="_blank" rel="noopener">Java 对象的生命周期</a></p>
+<ul>
+<li>在Java中，对象的生命周期包括以下几个阶段：</li>
+</ul>
+<ol>
+<li><p>创建阶段(Created)</p>
+</li>
+<li><p>应用阶段(In Use)</p>
+</li>
+<li><p>不可见阶段(Invisible)</p>
+</li>
+<li><p>不可达阶段(Unreachable)</p>
+</li>
+<li><p>收集阶段(Collected)</p>
+</li>
+<li><p>终结阶段(Finalized)</p>
+</li>
+<li><p>对象空间重分配阶段(De-allocated)</p>
+</li>
+</ol>
+<figure class="image-box">
+                <img src="https://img-blog.csdn.net/20140805161851452?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc29kaW5v/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="JavaObject Life Cycle" title="" class="">
+                <p>JavaObject Life Cycle</p>
+            </figure>
+<h2 id="创建阶段"><a href="#创建阶段" class="headerlink" title="创建阶段"></a>创建阶段</h2><p>在创建阶段系统通过下面的几个步骤来完成对象的创建过程</p>
+<ul>
+<li>为对象分配存储空间</li>
+<li>开始构造对象</li>
+<li>从超类到子类对static成员进行初始化</li>
+<li>超类成员变量按顺序初始化，递归调用超类的构造方法</li>
+<li>子类成员变量按顺序初始化，子类构造方法调用</li>
+</ul>
+<p>一旦对象被创建，并被分派给某些变量赋值，这个对象的状态就切换到了应用阶段</p>
+<h2 id="应用阶段"><a href="#应用阶段" class="headerlink" title="应用阶段"></a>应用阶段</h2><p>对象至少被一个强引用持有着。</p>
+<h2 id="不可见阶段"><a href="#不可见阶段" class="headerlink" title="不可见阶段"></a>不可见阶段</h2><p>当一个对象处于不可见阶段时，说明程序本身不再持有该对象的任何强引用，虽然该这些引用仍然是存在着的。</p>
+<p>简单说就是程序的执行已经超出了该对象的作用域了。</p>
+<p>举例如下图：本地变量count在25行时已经超出了其作用域，则在此时称之为count处于不可视阶段。当然这种情况编译器在编译的过程中会直接报错了。</p>
+<figure class="image-box">
+                <img src="https://img-blog.csdn.net/20140805162025676?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc29kaW5v/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="不可见阶段示例" title="" class="">
+                <p>不可见阶段示例</p>
+            </figure>
+<h2 id="不可达阶段"><a href="#不可达阶段" class="headerlink" title="不可达阶段"></a>不可达阶段</h2><p>对象处于不可达阶段是指该对象不再被任何强引用所持有。</p>
+<p>与“不可见阶段”相比，“不可见阶段”是指程序不再持有该对象的任何强引用，这种情况下，该对象仍可能被JVM等系统下的某些已装载的静态变量或线程或JNI等强引用持有着，这些特殊的强引用被称为”GC root”。存在着这些GC root会导致对象的内存泄露情况，无法被回收。</p>
+<h2 id="收集阶段"><a href="#收集阶段" class="headerlink" title="收集阶段"></a>收集阶段</h2><p>当垃圾回收器发现该对象已经处于“不可达阶段”并且垃圾回收器已经对该对象的内存空间重新分配做好准备时，则对象进入了“收集阶段”。如果该对象已经重写了finalize()方法，则会去执行该方法的终端操作。</p>
+<p>这里要特别说明一下：不要重载finazlie()方法！原因有两点：</p>
+<ul>
+<li>会影响JVM的对象分配与回收速度</li>
+</ul>
+<p>在分配该对象时，JVM需要在垃圾回收器上注册该对象，以便在回收时能够执行该重载方法；在该方法的执行时需要消耗CPU时间且在执行完该方法后才会重新执行回收操作，即至少需要垃圾回收器对该对象执行两次GC。</p>
+<ul>
+<li>可能造成该对象的再次“复活”</li>
+</ul>
+<p>在finalize()方法中，如果有其它的强引用再次持有该对象，则会导致对象的状态由“收集阶段”又重新变为“应用阶段”。这个已经破坏了Java对象的生命周期进程，且“复活”的对象不利用后续的代码管理。</p>
+<h2 id="终结阶段"><a href="#终结阶段" class="headerlink" title="终结阶段"></a>终结阶段</h2><p>当对象执行完finalize()方法后仍然处于不可达状态时，则该对象进入终结阶段。在该阶段是等待垃圾回收器对该对象空间进行回收。</p>
+<h2 id="对象空间重新分配阶段"><a href="#对象空间重新分配阶段" class="headerlink" title="对象空间重新分配阶段"></a>对象空间重新分配阶段</h2><p>垃圾回收器对该对象的所占用的内存空间进行回收或者再分配了，则该对象彻底消失了，称之为“对象空间重新分配阶段”。</p>
+<h1 id="重载、重写以及继承、多态的区别"><a href="#重载、重写以及继承、多态的区别" class="headerlink" title="重载、重写以及继承、多态的区别"></a>重载、重写以及继承、多态的区别</h1><p><a href="https://www.cnblogs.com/cugwx/p/3650605.html" target="_blank" rel="noopener">重载、重写以及继承、多态的区别</a></p>
+<h2 id="继承-inheritance"><a href="#继承-inheritance" class="headerlink" title="继承(inheritance)"></a>继承(inheritance)</h2><ul>
+<li>简单的说，继承就是在一个现有类型的基础上，通过增加新的方法或者重定义已有方法（下面会讲到，这种方式叫重写）的方式，产生一个新的类型。</li>
+</ul>
+<p>继承是面向对象的三个基本特征–封装、继承、多态的其中之一，我们在使用JAVA时编写的每一个类都是在继承，因为在JAVA语言中，<code>java.lang.Object</code>类是所有类最根本的基类（或者叫父类、超类），如果我们新定义的一个类没有明确地指定继承自哪个基类，那么Java就会默认为它是继承自Object类的。</p>
+<p>可以把JAVA中的类分为以下三种： </p>
+<blockquote>
+<p>类：使用class定义且不含有抽象方法的类。</p>
+</blockquote>
+<blockquote>
+<p>抽象类：使用abstract class定义的类，它可以含有，也可以不含有抽象方法。</p>
+</blockquote>
+<blockquote>
+<p>接口：使用interface定义的类。</p>
+</blockquote>
+<p>在这三种类型之间存在下面的继承规律： </p>
+<blockquote>
+<p>类可以继承（extends）类，可以继承（extends）抽象类，可以继承（implements）接口。</p>
+</blockquote>
+<blockquote>
+<p>抽象类可以继承（extends）类，可以继承（extends）抽象类，可以继承（implements）接口。</p>
+</blockquote>
+<blockquote>
+<p>接口只能继承（extends）接口。</p>
+</blockquote>
+<p>使用继承和组合复用原有的类，都是一种增量式的开发模式，这种方式带来的好处是不需要修改原有的代码，因此不会给原有代码带来新的BUG，也不用因为对原有代码的修改而重新进行测试，这对我们的开发显然是有益的。因此，如果我们是在维护或者改造一个原有的系统或模块，尤其是对它们的了解不是很透彻的时候，就可以选择增量开发的模式，这不仅可以大大提高我们的开发效率，也可以规避由于对原有代码的修改而带来的风险。 </p>
+<h2 id="多态-Polymorphism"><a href="#多态-Polymorphism" class="headerlink" title="多态(Polymorphism)"></a>多态(Polymorphism)</h2><p>继承是多态得以实现的基础。从字面上理解，多态就是一种类型表现出多种状态）。将一个方法调用同这个方法所属的主体（也就是对象或类）关联起来叫做绑定，分前期绑定和后期绑定两种。下面解释一下它们的定义： </p>
+<blockquote>
+<p><strong>前期绑定</strong>：在程序运行之前进行绑定，由编译器和连接程序实现，又叫做静态绑定。比如static方法和final方法，注意，这里也包括private方法，因为它是隐式final的。</p>
+</blockquote>
+<blockquote>
+<p>后期绑定：在运行时根据对象的类型进行绑定，由方法调用机制实现，因此又叫做动态绑定，或者运行时绑定。除了前期绑定外的所有方法都属于后期绑定。</p>
+</blockquote>
+<p>多态就是在后期绑定这种机制上实现的。多态给我们带来的好处是消除了类之间的耦合关系，使程序更容易扩展。</p>
+<h2 id="重载-overloading-和重写-overriding"><a href="#重载-overloading-和重写-overriding" class="headerlink" title="重载(overloading)和重写(overriding)"></a>重载(overloading)和重写(overriding)</h2><ul>
+<li>重载和重写都是针对方法的概念，在弄清楚这两个概念之前，我们先来了解一下什么叫方法的<strong>型构</strong>（英文名是signature，有的译作“签名”，虽然它被使用的较为广泛，但是这个翻译不准确的）。</li>
+<li>型构就是指方法的组成结构，具体包括方法的名称和参数，涵盖参数的数量、类型以及出现的顺序，但是不包括方法的返回值类型，访问权限修饰符，以及abstract、static、final等修饰符。</li>
+</ul>
+<p>比如下面两个就是具有相同型构的方法： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void method(int i, String s) &#123;   </span><br><span class="line">    // do something   </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line">public String method(int i, String s) &#123;   </span><br><span class="line">    // do something   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而这两个就是具有不同型构的方法： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void method(int i, String s) &#123;   </span><br><span class="line">    // do something   </span><br><span class="line">&#125;   </span><br><span class="line">  </span><br><span class="line">public void method(String s, int i) &#123;   </span><br><span class="line">    // do something   </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>了解完型构的概念后我们再来看看重载和重写，请看它们的定义： </p>
+<blockquote>
+<p>重写，英文名是overriding，是指在继承情况下，子类中定义了与其基类中方法具有相同型构的新方法，就叫做子类把基类的方法重写了。这是实现多态必须的步骤。</p>
+</blockquote>
+<blockquote>
+<p>重载，英文名是overloading，是指在同一个类中定义了一个以上具有相同名称，但是型构不同的方法。在同一个类中，是不允许定义多于一个的具有相同型构的方法的。</p>
+</blockquote>
+<p>考虑一个问题：构造器可以被重载吗？答案当然是可以的，我们在实际的编程中也经常这么做。</p>
+<p>实际上构造器也是一个方法，构造器名就是方法名，构造器参数就是方法参数，而它的返回值就是新创建的类的实例。但是构造器却不可以被子类重写，因为子类无法定义与基类具有相同型构的构造器。</p>
+<h1 id="Linux命令行操作"><a href="#Linux命令行操作" class="headerlink" title="Linux命令行操作"></a>Linux命令行操作</h1><h2 id="find文件查找命令与grep文件内容查找命令"><a href="#find文件查找命令与grep文件内容查找命令" class="headerlink" title="find文件查找命令与grep文件内容查找命令"></a>find文件查找命令与grep文件内容查找命令</h2><ul>
+<li>在使用linux时，经常需要进行文件查找。其中查找的命令主要有find和grep。两个命令是有区的。<br>区别：(1)find命令是根据文件的属性进行查找，如文件名，文件大小，所有者，所属组，是否为空，访问时间，修改时间等。<br>(2)grep是根据文件的内容进行查找，会对文件的每一行按照给定的模式(patter)进行匹配查找。</li>
+</ul>
+<h3 id="一-find命令"><a href="#一-find命令" class="headerlink" title="一.find命令"></a>一.find命令</h3><ul>
+<li>基本格式：find  path expression</li>
+</ul>
+<p>1.按照文件名查找</p>
+<p>(1)find / -name httpd.conf　　#在根目录下查找文件httpd.conf，表示在整个硬盘查找</p>
+<p>(2)find /etc -name httpd.conf　　#在/etc目录下文件httpd.conf</p>
+<p>(3)find /etc -name ‘<em>srm</em>‘　　#使用通配符*(0或者任意多个)。表示在/etc目录下查找文件名中含有字符串‘srm’的文件</p>
+<p>(4)find . -name ‘srm*’ 　　#表示当前目录下查找文件名开头是字符串‘srm’的文件</p>
+<p>2.按照文件特征查找 　　　<br>　<br>(1)find / -amin -10 　　# 查找在系统中最后10分钟访问的文件(access time)</p>
+<p>(2)find / -atime -2　　 # 查找在系统中最后48小时访问的文件</p>
+<p>(3)find / -empty 　　# 查找在系统中为空的文件或者文件夹</p>
+<p>(4)find / -group cat 　　# 查找在系统中属于 group为cat的文件</p>
+<p>(5)find / -mmin -5 　　# 查找在系统中最后5分钟里修改过的文件(modify time)</p>
+<p>(6)find / -mtime -1 　　#查找在系统中最后24小时里修改过的文件</p>
+<p>(7)find / -user fred 　　#查找在系统中属于fred这个用户的文件</p>
+<p>(8)find / -size +10000c　　#查找出大于10000000字节的文件(c:字节，w:双字，k:KB，M:MB，G:GB)(9)find / -size -1000k 　　#查找出小于1000KB的文件</p>
+<p>3.使用混合查找方式查找文件</p>
+<ul>
+<li>参数有： ！，-and(-a)，-or(-o)。</li>
+</ul>
+<p>(1)find /tmp -size +10000c -and -mtime +2 　　#在/tmp目录下查找大于10000字节并在最后2分钟内修改的文件</p>
+<p>(2)find / -user fred -or -user george 　　#在/目录下查找用户是fred或者george的文件文件</p>
+<p>(3)find /tmp ! -user panda　　#在/tmp目录中查找所有不属于panda用户的文件</p>
+<h3 id="二、grep命令"><a href="#二、grep命令" class="headerlink" title="二、grep命令"></a>二、grep命令</h3><ul>
+<li>基本格式：find  expression</li>
+</ul>
+<p>1.主要参数</p>
+<p>　　　　[options]主要参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">－c：只输出匹配行的计数。</span><br><span class="line">－i：不区分大小写</span><br><span class="line">－h：查询多文件时不显示文件名。</span><br><span class="line">－l：查询多文件时只输出包含匹配字符的文件名。</span><br><span class="line">－n：显示匹配行及行号。</span><br><span class="line">－s：不显示不存在或无匹配文本的错误信息。</span><br><span class="line">－v：显示不包含匹配文本的所有行。</span><br></pre></td></tr></table></figure></p>
+<p>pattern正则表达式主要参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">\： 忽略正则表达式中特殊字符的原有含义。</span><br><span class="line">^：匹配正则表达式的开始行。</span><br><span class="line">$: 匹配正则表达式的结束行。</span><br><span class="line">\&lt;：从匹配正则表达 式的行开始。</span><br><span class="line">\&gt;：到匹配正则表达式的行结束。</span><br><span class="line">[ ]：单个字符，如[A]即A符合要求 。</span><br><span class="line">[ - ]：范围，如[A-Z]，即A、B、C一直到Z都符合要求 。</span><br><span class="line">.：所有的单个字符。</span><br><span class="line">* ：有字符，长度可以为0。</span><br></pre></td></tr></table></figure></p>
+<p>2.实例　 </p>
+<p>(1)grep ‘test’ d*　　#显示所有以d开头的文件中包含 test的行</p>
+<p>(2)grep ‘test’ aa bb cc 　　 #显示在aa，bb，cc文件中包含test的行</p>
+<p>(3)grep ‘[a-z]{5}’ aa 　　#显示所有包含每行字符串至少有5个连续小写字符的字符串的行</p>
+<p>(4)grep magic /usr/src　　#显示/usr/src目录下的文件(不含子目录)包含magic的行</p>
+<p>(5)grep -r magic /usr/src　　#显示/usr/src目录下的文件(包含子目录)包含magic的行</p>
+<p>(6)grep -w pattern files 只匹配整个单词，而不是字符串的一部分(如匹配’magic’，而不是’magical’)</p>
+
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2018-08-30T05:30:45.731Z" itemprop="dateUpdated">2018-08-30 13:30:45</time>
+</span><br>
+
+
+        
+        转载注明出处，原文地址：<a href="/2018/08/30/Java学习笔记-3/" target="_blank" rel="external">http://yoursite.com/2018/08/30/Java学习笔记-3/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="CGnz">
+            CGnz
+        </a>
+    </footer>
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Spring/">Spring</a></li></ul>
+
+            <div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/30/Java学习笔记-3/&title=《Java学习笔记-3》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/30/Java学习笔记-3/&title=《Java学习笔记-3》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="prev">
+      <a href="/2018/08/30/设计模式/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">设计模式</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="next">
+      <a href="/2018/08/30/Java学习笔记-2/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Java学习笔记-2</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#HTTP协议-POST和GET的区别"><span class="post-toc-number">1.</span> <span class="post-toc-text">HTTP协议 POST和GET的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#原理性的区别"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原理性的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GET-安全与幂等"><span class="post-toc-number">1.1.1.</span> <span class="post-toc-text">GET 安全与幂等</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#POST-可能修改服务器上的资源请求"><span class="post-toc-number">1.1.2.</span> <span class="post-toc-text">POST 可能修改服务器上的资源请求</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用上的区别"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">应用上的区别</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#总结"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Java对象的生命周期"><span class="post-toc-number">2.</span> <span class="post-toc-text">Java对象的生命周期</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#创建阶段"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">创建阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#应用阶段"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">应用阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不可见阶段"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">不可见阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#不可达阶段"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">不可达阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#收集阶段"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">收集阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#终结阶段"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">终结阶段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#对象空间重新分配阶段"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">对象空间重新分配阶段</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#重载、重写以及继承、多态的区别"><span class="post-toc-number">3.</span> <span class="post-toc-text">重载、重写以及继承、多态的区别</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#继承-inheritance"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">继承(inheritance)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#多态-Polymorphism"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">多态(Polymorphism)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#重载-overloading-和重写-overriding"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">重载(overloading)和重写(overriding)</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#Linux命令行操作"><span class="post-toc-number">4.</span> <span class="post-toc-text">Linux命令行操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#find文件查找命令与grep文件内容查找命令"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">find文件查找命令与grep文件内容查找命令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一-find命令"><span class="post-toc-number">4.1.1.</span> <span class="post-toc-text">一.find命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、grep命令"><span class="post-toc-number">4.1.2.</span> <span class="post-toc-text">二、grep命令</span></a></li></ol></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
+</article>
+
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        嚯嚯你开始辣
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat1.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat1.jpg" data-alipay="/img/reward-alipay1.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+    
+</div>
+
+        <footer class="footer">
+    
+    <div class="top">
+        
+        
+            <p>
+    <span>Links：</span>
+    
+    <span class="blogroll-item">
+        <a href="https://cgnz.github.io/" target="_blank">HOME</a>
+    </span>
+    
+</p>
+
+        
+    </div>
+    
+    <div class="bottom">
+        <p>
+            <span>
+                CGnz &copy; 2018
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">mellow</a>
+            </span>
+            
+            
+            
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/08/30/Java学习笔记-3/&title=《Java学习笔记-3》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/08/30/Java学习笔记-3/&title=《Java学习笔记-3》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS27CQBAFQO5/abJNFCDvtU0k2jUrZJkwNYtOf+Z2i9f92/r9PHn/9+dnf+3Z3zxhYWBgfCzj/nLl22p/5fWv53vDwMC4DuPZDz97Jwm1+TvtAWFgYGC0IbXddJ5uYmBgYMwYbeHappgYGBgYR4rY9ltHyt031uIYGBgfyMi77v//+S3zDQwMjI9i3MvVjjnbJ7OFgYGxmzEbQCZNtLMCd9Hgw8DAWM143cY6N1y2RzAsWTEwMBYx8uQvHz3m7bYjI4QfTzAwMC7MOCt0ztjF4WJgYFyA0Qa4nDQ7oGTrD7qGGBgYqxnJVmYFcB5A2+d1LxADA2MpI2/rt1vPC+ZktxgYGLsZyebycnQW/doRaTSJxcDAWMrIk8LjlyHyJl2RYmJgYKxm5MPFfACQb7EN6H8cJQYGxjrGLKS2FybaQWYbgjEwMHYz8nQtD6ZtvM+ba8X/DQwMjKWMWZk6myfODiVv3mFgYOxmHLkKNmuZtSE4OmgMDIx1jFny144bZ0VpkSBiYGBcgJE3+tsG2ax5V8MwMDAuwMjbZ8VVrbgQbb/1x7UwDAyMRYx7uRLM7J18RPHguxgYGKsZ+Uoabe31i9lljnqQiYGBsYJxpN2WJ4v5yc1GmxgYGFdgHJp8xgE3P4L6IggGBgbG2xK+ertnBVwMDIzVjCOJ3axlFg0hMDAwLsBohwH5IPN9JTEGBsZ1GLO8Kw+ss+sa+QFhYGCsZnwBpdBqmH3AI1oAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.2.8"></script>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.2.8"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.2.8"></script>
+
+<!-- third-party -->
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.2.8"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+    
+    
+
+
+
+
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+    
+</body>
+</html>
