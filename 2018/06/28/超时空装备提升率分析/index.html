@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>超时空副本装备提升率分析 | CGNz&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前言超时空团队副本、以及团队副本的所有新史诗装备都已经在国服实装了，超时空副本史诗装备的强度应该是各位最关心的问题。在此次全新的团队副本中，我们可以获得新的武器、首饰、特殊装备，其中首饰的单件部位应该是沿用了韩服魔兽首饰的单件属性。想必各位最近都在为未来的装备搭配方向而感到担忧，要解决这个问题，还是要从这些新装备的提升率分析开始，那么这次就先对超时空首饰的提升率进行一个分析。 超时空首饰介绍及提升">
+<meta name="keywords" content="DNF,游戏数值分析">
+<meta property="og:type" content="article">
+<meta property="og:title" content="超时空副本装备提升率分析">
+<meta property="og:url" content="http://yoursite.com/2018/06/28/超时空装备提升率分析/index.html">
+<meta property="og:site_name" content="CGNz&#39;s blog">
+<meta property="og:description" content="前言超时空团队副本、以及团队副本的所有新史诗装备都已经在国服实装了，超时空副本史诗装备的强度应该是各位最关心的问题。在此次全新的团队副本中，我们可以获得新的武器、首饰、特殊装备，其中首饰的单件部位应该是沿用了韩服魔兽首饰的单件属性。想必各位最近都在为未来的装备搭配方向而感到担忧，要解决这个问题，还是要从这些新装备的提升率分析开始，那么这次就先对超时空首饰的提升率进行一个分析。 超时空首饰介绍及提升">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/neck.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/hand.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/ring.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/six.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/left.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/right.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/ear.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/hell.png">
+<meta property="og:updated_time" content="2021-07-28T03:16:37.815Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="超时空副本装备提升率分析">
+<meta name="twitter:description" content="前言超时空团队副本、以及团队副本的所有新史诗装备都已经在国服实装了，超时空副本史诗装备的强度应该是各位最关心的问题。在此次全新的团队副本中，我们可以获得新的武器、首饰、特殊装备，其中首饰的单件部位应该是沿用了韩服魔兽首饰的单件属性。想必各位最近都在为未来的装备搭配方向而感到担忧，要解决这个问题，还是要从这些新装备的提升率分析开始，那么这次就先对超时空首饰的提升率进行一个分析。 超时空首饰介绍及提升">
+<meta name="twitter:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-456/neck.png">
+  
+    <link rel="alternate" href="/atom.xml" title="CGNz&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CGNz&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鸿鹄安知燕雀之志</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-超时空装备提升率分析" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/06/28/超时空装备提升率分析/" class="article-date">
+  <time datetime="2018-06-27T17:09:28.000Z" itemprop="datePublished">2018-06-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/DNF/">DNF</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      超时空副本装备提升率分析
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>超时空团队副本、以及团队副本的所有新史诗装备都已经在国服实装了，超时空副本史诗装备的强度应该是各位最关心的问题。在此次全新的团队副本中，我们可以获得新的武器、首饰、特殊装备，其中首饰的单件部位应该是沿用了韩服魔兽首饰的单件属性。想必各位最近都在为未来的装备搭配方向而感到担忧，要解决这个问题，还是要从这些新装备的提升率分析开始，那么这次就先对超时空首饰的提升率进行一个分析。</p>
+<h1 id="超时空首饰介绍及提升率分析"><a href="#超时空首饰介绍及提升率分析" class="headerlink" title="超时空首饰介绍及提升率分析"></a>超时空首饰介绍及提升率分析</h1><h2 id="超时空首饰分析-装备搭配前提"><a href="#超时空首饰分析-装备搭配前提" class="headerlink" title="超时空首饰分析 装备搭配前提"></a>超时空首饰分析 装备搭配前提</h2><p>既然新装备都出了，那么在装备搭配前提上也不应该停滞不前，这里就将其他装备设为：<strong>七宗罪套装、圣耀武器、海伯伦套装</strong>。为了便于进行计算，海伯伦套装直接取触发“暗”的效果。下面就来看看超时空首饰的提升率到底怎么样。</p>
+<h2 id="引力：万物之拥-项链"><a href="#引力：万物之拥-项链" class="headerlink" title="引力：万物之拥 项链"></a><strong>引力：万物之拥</strong> 项链</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/neck.png" alt="引力：万物之拥"></p>
+<p>​项链万物之拥可<strong>增加20%物理、魔法、独立攻击力</strong>，可增加<strong>5%双速、7%施放速度</strong>。属性构成十分简洁，将其他装备的百分比三攻加成数值取为39%（七宗罪下装+17%、黑暗祭礼+22%），项链的提升率为<code>14.39%</code>（1.59/1.39），就单件来说自然是很不错的，当然我们的分析重点并不在单件上，这里就不说太多了。</p>
+<h2 id="光：无垠之昼-手镯"><a href="#光：无垠之昼-手镯" class="headerlink" title="光：无垠之昼 手镯"></a><strong>光：无垠之昼</strong> 手镯</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/hand.png" alt="光：无垠之昼"></p>
+<p>​手镯无垠之昼可<strong>增加20%技能攻击力</strong>，同样可增加<strong>5%双速和7%施放速度</strong>。手镯的提升率没有太多可计算的，常规技能攻击力直接乘算，20%加成数值的提升率就是20%，从单件的角度来看，这也是一件十分优秀的强散。</p>
+<h2 id="暗：无限之夜-戒指"><a href="#暗：无限之夜-戒指" class="headerlink" title="暗：无限之夜 戒指"></a><strong>暗：无限之夜</strong> 戒指</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/ring.png" alt="暗：无限之夜"></p>
+<p>​戒指无限之夜可<strong>增加20%力智</strong>，在<strong>速度方面的加成与项链、手镯相同</strong>。其他装备的百分比力智加成数值取为15%（七宗罪上衣），忽略力智系数，戒指无限之夜的提升率为<code>17.39%</code>（1.35/1.15）；再在此提升率基础上考虑力智系数，将基础力量设为3500点，此时戒指的实际提升率为<code>16.23%</code>，这样的单件提升率仍然是十分理想的。</p>
+<h2 id="套装-黑洞湮灭"><a href="#套装-黑洞湮灭" class="headerlink" title="套装 黑洞湮灭"></a>套装 黑洞湮灭</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/six.png" alt="套装属性"></p>
+<p>​这里暂且将套装效果看成由三件首饰凑成的[3]套装，可增加19%额外黄字伤害、以及19%额外暴击伤害。此时其他装备的黄字伤害加成数值为0，其他额外黄字伤害加成数值为15%（七宗罪鞋），那么19%额外黄字的提升率为<code>16.52%</code>（1.34/1.15）。</p>
+<p>同样的，此时其他装备的暴击伤害加成数值为0，其他额外暴击伤害加成数值为25%（七宗罪套装），那么19%额外暴击伤害的提升率为<code>15.2%</code>（1.44/1.25）。由于超时空首饰单件和套装所加成的属性种类不同，这里就没必要再对其进行整合了，直接将前面的提升率计算结果相乘，可得出超时空史诗首饰套装的提升率为：</p>
+<blockquote>
+<p>1.1439<em>1.2</em>1.1623<em>1.1652</em>1.152=<code>2.1416</code></p>
+</blockquote>
+<p>超时空史诗首饰套装的提升率为<code>114.16%</code>，我们先不管这个数值是高还是低，本次分析的目的在于确定以后的首饰搭配方向，那么不得不将超时空首饰的提升率，与恍惚套的提升率在同等条件下做一个比较。</p>
+<h2 id="恍惚套-提升率分析"><a href="#恍惚套-提升率分析" class="headerlink" title="恍惚套 提升率分析"></a>恍惚套 提升率分析</h2><p>​恍惚套已经是我们相当熟悉的装备了，我在分析时也就长话短说。在分析恍惚套时，必须考虑的是单件部位的强化、增幅等级，这里直接将其设为+12，只考虑强化等级对其本身属性的影响（即不考虑增幅带来的力量或者智力加成），那么此时恍惚套的属性以及它们所对应的提升率为：</p>
+<p>技能攻击力+17.6%：此类效果直接乘算，同时启明星基础的5%与强化的12%乘算，提升率为<code>17.6%</code>（1.05*1.12）。</p>
+<p>最终伤害+17%：其他装备的最终伤害加成数值为37%（七宗罪腰带+17%、王冠非冠+20%）；提升率为<code>12.41%</code>（1.54/1.37）。</p>
+<p>物理、魔法、独立攻击力+17%：其他百分比三攻加成数值为39%，提升率为<code>12.23%</code>（1.56/1.39）。</p>
+<p>黄字伤害+20%：额外黄字伤害为七宗罪鞋的15%，提升率为<code>17.39%</code>（1.35/1.15）。<br>暴击伤害+20%：额外暴击伤害为七宗罪套装的25%，提升率为<code>16%</code>（1.45/1.25）。</p>
+<p>部分玩家在这里肯定会问，为什么要按加算的方式来计算黄字、暴击伤害的提升率；因为<strong>黄字伤害和额外黄字伤害之间本身就是加算关系</strong>（暴击伤害同理），尤其是在将计算前提装备设定好的情况下，更应该充分考虑这种加算关系，这里也不多说了。最后不难得出，相同条件下+10恍惚套的提升率为：</p>
+<blockquote>
+<p>1.176<em>1.1241</em>1.1223<em>1.1739</em>1.16=<code>2.0203</code></p>
+</blockquote>
+<p>只考虑装备本身的属性，此时+12恍惚套的提升率为102.03%，这在相同的装备条件下，比黑洞湮灭首饰套装的提升率低了6%（2.1416/2.0203）。或许部分玩家对恍惚套提升率的认识，还停留在最初搭配防具A套的阶段，随着防具B套中最终伤害、百分比三攻、额外黄字暴击伤害数值的上升，恍惚套的提升率确实是受到了一定的影响。</p>
+<p>通过提升率分析可得出，即便是+12的恍惚套（只考虑装备本身属性），也略弱于超时空首饰三件；当然，这仅仅是在七宗罪套装的搭配下所得出的结果，在防具不同时，超时空首饰、恍惚套各自的提升率都会发生一定的变化。但不管怎么变，在防具B套、海伯伦套装的搭配下，超时空首饰的提升率基本是大于等于+12恍惚套的。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>如果超时空首饰的属性确确实实是<strong>最强首饰套装</strong>。当然，其在制作方式上，也是通过恍惚套、星空套或者三无尽升级。总的说来，超时空首饰三件套虽然略强于恍惚套，但二者的差距并不大，其实可以勉强将二者并称为最强首饰套装。</p>
+<p>并且两套首饰在属性加成的侧重点上有一些不同，出于对以后未知新装备的搭配考虑，各位可以在装备条件允许的情况下，保留已经打造好的恍惚套，用星空套或者三无尽来升级超时空首饰。</p>
+<h1 id="超时空特殊装备三件套介绍及提升率"><a href="#超时空特殊装备三件套介绍及提升率" class="headerlink" title="超时空特殊装备三件套介绍及提升率"></a>超时空特殊装备三件套介绍及提升率</h1><ul>
+<li>超时空特殊装备三件套提升率分析，与海伯伦孰强孰弱？</li>
+</ul>
+<p>这两天已经为各位分析过超时空武器和首饰的提升率了，那么本次就最后来说一下超时空特殊装备的提升率，也算是以此来为超时空装备的分析暂时地画上一个句号。在超时空的所有史诗装备中，特殊装备属性的确定时间是最早的，想必各位具备计算能力的玩家对此装备的提升能力已经有了一定的见解。令大部分玩家困惑的，应该是超时空特殊装备与海伯伦套装的强弱关系，以及涉及到特殊装备的装备搭配问题，那么下面我就从超时空特殊装备与海伯伦套装进行对比的角度出发，全面地分析一下这些问题。</p>
+<h2 id="超时空特殊装备分析-装备搭配前提"><a href="#超时空特殊装备分析-装备搭配前提" class="headerlink" title="超时空特殊装备分析 装备搭配前提"></a>超时空特殊装备分析 装备搭配前提</h2><p>在分析超时空特殊装备的提升率时，仍然要将首饰设为恍惚套。虽然我们已经得知超时空首饰略强于恍惚套，但超时空首饰与超时空特殊装备是同一套装备，它们共同拥有[3]套装和[5]套装效果，在分析时无法准确地去确定分析所用到的基础属性，所以仍然要将首饰设为<strong>恍惚套</strong>，这里就将<strong>强化或增幅等级设为+12</strong>。防具仍然选为<strong>七宗罪套装</strong>，武器还是<strong>圣耀</strong>，下面就具体来计算一下超时空特殊装备的提升率。</p>
+<h2 id="时：永恒凝滞-辅助装备"><a href="#时：永恒凝滞-辅助装备" class="headerlink" title="时：永恒凝滞 辅助装备"></a><strong>时：永恒凝滞</strong> 辅助装备</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/left.png" alt="时：永恒凝滞"></p>
+<p>​辅助装备永恒凝滞有着标准数值的四维加成，可增加20点属强、以及14%额外黄字伤害。将角色属强数值设为220点，忽略怪物的属抗，并且此时没有属性白字装备，那么20点属强的提升率为<code>4.55%</code>（20/440）。</p>
+<p>然后是14%额外黄字伤害：黄字伤害取恍惚套的20%，其他额外黄字伤害取七宗罪鞋的15%，那么这条效果的提升率为10.37%（1.49/1.35）。最后可以很容易地得出，永恒凝滞忽略基础力智后的单件提升率为<code>15.39%</code>（1.1037*1.0455）。仅从单件装备来看，此提升率并不理想，只算是85-90级史诗辅助装备的中等水平，但这套装备的意义也不在于单件，这里只是顺带提一提，各位不用放在心上，主要看得是套装。</p>
+<h2 id="空：虚无之渊-魔法石"><a href="#空：虚无之渊-魔法石" class="headerlink" title="空：虚无之渊 魔法石"></a><strong>空：虚无之渊</strong> 魔法石</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/right.png" alt="空：虚无之渊"></p>
+<p>​魔法石虚无之渊可增加75点所有属性强化，和无尽贪食之源有些相似（超时空魔法石多5点属强）。同样将基础属强数值设为220点，忽略敌人属抗，无属性白字装备的存在；魔法石的提升率为<code>17.05%</code>（75/440）。就单件提升率而言还算不错，但也没有必要为了单件属性而去制作它。</p>
+<h2 id="破：万物皆灭-耳环"><a href="#破：万物皆灭-耳环" class="headerlink" title="破：万物皆灭 耳环"></a><strong>破：万物皆灭</strong> 耳环</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/ear.png" alt="破：万物皆灭"></p>
+<p>​耳环万物皆灭可增加20点所有属性强化、以及14%额外暴击伤害。在属性的结构上与辅助装备有些相似，首先20点属强在相同属强数值设置下的提升率也为4.55%。然后对这14%额外暴击伤害而言，此时其他装备的暴击伤害数值为20%，其他额外暴击伤害数值为25%（七宗罪套装），那么这条效果的提升率为<code>9.66%</code>（1.59/1.45）。最后不难得出，超时空耳环的单件提升率为14.65%（1.0966*1.0455）。</p>
+<ul>
+<li>其实计算单件提升率的意义不大，因为单件的属强数值、额外黄字伤害数值等，最后都是要在整体分析时用总和来计算的。这里之所以算一下单件，也只想说明一下超时空特殊装备的单件属性并不强，在搭配还不完整的情况下，单件没有太大的使用意义。下面还是主要来看一下单件与套装属性的整合：</li>
+</ul>
+<h2 id="超时空特殊装备三件套-属性分析"><a href="#超时空特殊装备三件套-属性分析" class="headerlink" title="超时空特殊装备三件套 属性分析"></a>超时空特殊装备三件套 属性分析</h2><p>​超时空特殊装备三件套总共可增加115点所有属性强化、33%额外黄字伤害、33%额外暴击伤害；由于四维加成都是标准数值，这里就不纳入计算中了。总的说来属性构成比较简单，整合每条属性以及它们所对应的提升率：</p>
+<p>所有属性强化+115点：基础属强数值仍然设为220点，不计敌人属性抗性，不带属性白字装备；提升率为<code>26.14%</code>（115/440）。额外黄字伤害+33%：黄字伤害取恍惚套的20%，其他额外黄字伤害仍然取七宗罪鞋的15%；提升率为<code>24.44%</code>（1.68/1.35）。额外暴击伤害+33%：暴击伤害也取恍惚套的20%，其他额外暴击伤害取七宗罪套装的25%；提升率为<code>22.76%</code>（1.78/1.45）。最后可以很轻松地得出，在七宗罪套装、恍惚套的搭配下，超时空特殊装备三件套的提升率为：</p>
+<blockquote>
+<p>1.2614<em>1.2444</em>1.2276=<code>1.9269</code></p>
+</blockquote>
+<p>在此搭配下的超时空特殊装备提升率为92.69%，我们仍然不急着评判此数值的高低，为了更加直观地感受超时空特殊装备的提升率，下面就在相同的装备搭配下，分析一下海伯伦套装的提升率。</p>
+<h2 id="海伯伦套装-提升率分析"><a href="#海伯伦套装-提升率分析" class="headerlink" title="海伯伦套装 提升率分析"></a>海伯伦套装 提升率分析</h2><p>​因为海伯伦套装不是本次分析的主角，我在分析时也就长话短说了，计算时直接将触发效果取为黑暗荣耀。海伯伦套装可增加高出特殊装备标准数值的337点四维（王冠高出82点、祭礼高出55点、套装+200点）：以物理职业为例，基础力量数值设为3000点，单刷提升率为<code>10.37%</code>（337/3250）。</p>
+<p>最终伤害+20%：其他最终伤害数值为34%（七宗罪腰带+17%，+12氤氲之息+17%），提升率为<code>14.93%</code>（1.54/1.34）。物理、魔法、独立攻击力+22%：其他百分比三攻加成数值取作34%（七宗罪下装+17%，+12清泉流响+17%），提升率为<code>16.42%</code>（1.56/1.34）。技能攻击力+32%（王座本源+10%，黑暗荣耀+20%，二者乘算）：此类效果相互之间直接乘算，所以提升率为<code>32%</code>（1.1*1.2）。</p>
+<p>可使1-85级技能等级+1：被动技能部分的提升率记为5%，对1-45级技能的提升大约记为4%，对50-80级技能的提升大约记为5.5%，对85级技能的提升记为15%。最后得出海伯伦套装（暗）的提升率为：</p>
+<blockquote>
+<p>1.1037<em>1.1493</em>1.1642<em>1.32</em>1.05*1.04=<code>2.1287</code>（1-45级技能）</p>
+</blockquote>
+<blockquote>
+<p>1.1037<em>1.1493</em>1.1642<em>1.32</em>1.05*1.055=<code>2.1594</code>（50-80级技能）</p>
+</blockquote>
+<blockquote>
+<p>1.1037<em>1.1493</em>1.1642<em>1.32</em>1.05*1.15=<code>2.3538</code>（85级技能）</p>
+</blockquote>
+<p>海伯伦套装（暗）对1-45级技能的提升率大约为112.87%，对50-80级技能的提升率大约为115.94%，对85级技能的提升率大约为135.38%。由此可以看出，在板甲B套的搭配下，海伯伦套装（暗）至少比超时空三件套强10%，在二觉单技能伤害上则强了22%。所以由目前的分析可知，在防具是板甲B套时，仍然是海伯伦（暗）强一些。</p>
+<h2 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h2><p>​随着防具的改变，装备中所对应加算属性的基础数值也会发生改变，所以在五套防具B套下得出的提升率结果并不相同，但海伯伦强于超时空的结论可以确定能适用于布甲、轻甲、板甲；我在皮甲和重甲方面还未进行计算，但即便皮甲、重甲之下的超时空略强于海伯伦，今后最优搭配仍然是超时空首饰加海伯伦，制作海伯伦绝对是没错的。</p>
+<p>另外还有一种<strong>超时空5件、加一件提升率较高的单件</strong>的搭配方式，对此我也暂时没有进行计算，这个算起来会比较复杂，因为单件装备的不同会使提升率出现很多种结果，如果各位比较想知道这个问题的话，我在这段时间内也可以准备分析一下。最后还是那句话: <strong>海伯伦不会被超时空3打败</strong>，制作海伯伦套装仍然是未来装备发展的一个大方向。</p>
+<h1 id="地狱拓荒者武器介绍及分析"><a href="#地狱拓荒者武器介绍及分析" class="headerlink" title="地狱拓荒者武器介绍及分析"></a>地狱拓荒者武器介绍及分析</h1><ul>
+<li>地狱拓荒者对二觉技能的加成虽高，整体伤害却比不上圣耀</li>
+</ul>
+<p>地狱拓荒者武器的属性到现在已经确定，地狱拓荒者对二觉技能有着十分优秀的单独提升，同时在对整体伤害的加成方面也有技能攻击力和白字附加伤害的支撑。</p>
+<p>但问题在于，在比较地狱拓荒者与圣耀武器的强弱时，应该如何将地狱拓荒者对二觉的等级加成体现到整体提升率上呢？在这方面我也是思考了很久，最后找到了一个相对合理的方法来解决此问题。那么这里先不说太多，下面就先对地狱拓荒者武器的提升率进行一个详细的分析。</p>
+<h2 id="地狱拓荒者提升率分析-装备搭配前提"><a href="#地狱拓荒者提升率分析-装备搭配前提" class="headerlink" title="地狱拓荒者提升率分析-装备搭配前提]"></a>地狱拓荒者提升率分析-装备搭配前提]</h2><p>只要角色的卢克团本进度正常，在获得地狱拓荒者武器之时，装备应该已经是防具B套和海伯伦套装了，所以这里也将装备搭配前提设为：七宗罪套装、恍惚套、海伯伦套装（计算时默认触发“暗”）。至于首饰或者特殊装备是超时空史诗的搭配情况，就等进度到那里的时候再说。</p>
+<h2 id="地狱拓荒者武器-属性分析"><a href="#地狱拓荒者武器-属性分析" class="headerlink" title="地狱拓荒者武器 属性分析"></a>地狱拓荒者武器 属性分析</h2><p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-456/hell.png" alt="地狱拓荒者武器"></p>
+<p>​地狱拓荒者武器可增加<strong>39%技能攻击力</strong>、以及<strong>10%白字附加伤害</strong>；<strong>攻击时有50%几率使85级技能等级+1，最高可+3</strong>；赋予自身最高属强所对应的属性攻击。除圣骑士的十字架之外，所有职业地狱拓荒者武器的伤害加成属性相同。整合地狱拓荒者武器的所有伤害提升效果：</p>
+<p>技能攻击力+39%：乘算属性，提升率直接记为<code>39%</code>。白字附加伤害+10%：其他装备的白字加成数值取作42%（白字称号+10%，宠物和宠物装备+17%，七宗罪头肩+15%）；不破招提升率为<code>7.04%</code>（1.52/1.42），白字二次破招提升率为<code>8.2%</code>。85级技能等级+3：下面先详细地说一说这条效果的计算方式。</p>
+<p>​在等级加成效果的提升率计算中，需要用到对应技能在对应等级差时的面板数据。以帕拉丁的二觉技能为例，在有契约的情况下，二觉技能可学习3级，如果没有穿戴其他增加二觉等级的装备，那么可将二觉等级的基准看作3级。帕拉丁3级二觉的百分比为151843%，4级二觉的百分比为175898%，此时可以得出，在二觉等级基准为3级的情况下，1级等级加成所带来的提升为：</p>
+<blockquote>
+<p>1759.98/1519.43=<code>1.1583</code></p>
+</blockquote>
+<p>在二觉的原本等级为3的情况下，1级等级加成对二觉的单独提升为15.83%。在所设装备前提下，若时装上衣的技能加成没有选为二觉，那么二觉的基础等级应该为4级（契约下可学习3级，王座本源+1级）。此时用7级二觉的百分比与4级二觉的百分比，在相同的计算方法下，即可得出地狱拓荒者3级等级加成对二觉的单独提升，结果大约为41%。那么可以得出地狱拓荒者的提升率为：</p>
+<p>整体伤害：</p>
+<blockquote>
+<p>1.39<em>1.0704 或 </em>1.082=<code>1.4879</code>（不破招）或<code>1.504</code>（白字二次破招）</p>
+</blockquote>
+<p>二觉伤害：</p>
+<blockquote>
+<p>1.39<em>1.41</em>1.0704 或 *1.082=<code>2.098</code>（不破招）或<code>2.1206</code>（白字二次破招）</p>
+</blockquote>
+<p>地狱拓荒者在不破招时对整体伤害的提升为<code>48.79%</code>，对二觉的单独提升为<code>109.8%</code>；在白字二次破招时对整体伤害的提升为<code>50.4%</code>，对二觉的单独提升为<code>112.06%</code>。</p>
+<p>就对整体伤害50%左右的提升而言，地狱拓荒者只是<strong>基本达到了90级自制史诗或者深渊史诗的水准</strong>；就对二觉伤害110%左右的提升而言，地狱拓荒者则是<strong>目前所有武器中最强</strong>的。在二觉的单技能伤害上、尤其是在<strong>追求二觉单技能秒杀时，地狱拓荒者与其他武器比起来有着绝对的优势</strong>。</p>
+<p>但随着今后副本中怪物HP数值的增加，单技能秒杀对大部分玩家而言都会越来越难，那么就必须要考虑到整体提升率了。但是地狱拓荒者武器对二觉的单独提升，应该用何种方式来将其转换进整体提升率中呢？</p>
+<h3 id="二觉单独提升率的转换"><a href="#二觉单独提升率的转换" class="headerlink" title="二觉单独提升率的转换"></a>二觉单独提升率的转换</h3><p>​首先在修练场中将每个输出技能使用一次，以此来简单得出每个技能在伤害中的占比。当然，不同职业的占比情况是不一样的，所以我在这里只能做一种大约的转换；并且这种方式没有将冷却时间考虑在内，比如一些冷却时间短的技能，在一次完整的输出过程中往往会被用到多次，这也会影响各个技能的伤害占比。对帕拉丁而言，<strong>二觉的伤害占比大约为23%</strong>，我们将总伤害假设为100点，按白字二次破招的情况来进行考虑，在带入地狱拓荒者的提升率之后，总伤害会上升至：</p>
+<blockquote>
+<p>100<em>（23%</em>2.1206+77*1.5123）=<code>165.22</code></p>
+</blockquote>
+<p>这时可以得出，在各技能的使用次数均为1的输出过程中，地狱拓荒者将二觉单独加成转换成整体加成之后的提升率为<code>65.22%</code>。但是在一次完整的输出过程中，随着冷却时间较短的技能的多次使用，二觉的伤害占比会降低；与之对应的，地狱拓荒者将二觉转换进整体的提升率也会降低，所以这里的提升率结果并不是固定的。下面还是从提升率计算的层面，对比一下地狱拓荒者和圣耀救赎武器。</p>
+<h2 id="圣耀救赎武器-属性分析"><a href="#圣耀救赎武器-属性分析" class="headerlink" title="圣耀救赎武器 属性分析"></a>圣耀救赎武器 属性分析</h2><p>​除圣骑士的十字架之外，圣耀武器可增加40%技能攻击力，在开启魔能后可再增加22%技能攻击力。基础40%与魔能22%乘算，所以圣耀救赎武器的提升率为<code>70.8%</code>（1.4*1.22），强于转换二觉伤害之后的地狱拓荒者。</p>
+<p>这里需要再次强调，地狱拓荒者通过转换二觉伤害所得出的提升率并不是固定或准确的，会随实战中各技能使用次数的变化而变化。这里为了使两把武器的比较结果更加清楚，就按具体技能来算一下二者的差距。</p>
+<p>将地狱拓荒者武器的提升率取作白字二次破招时的数值，在<strong>1-80级技能上</strong>，圣耀救赎武器比地狱拓荒者强<code>13.56%</code>（1.708/1.504）；在<strong>二觉单技能伤害</strong>上，地狱拓荒者比圣耀救赎武器强<code>24.16%</code>（2.1206/1.708）。这样一来，我们就可以根据自己职业二觉伤害的占比，来对两把武器做出选择了。</p>
+<h2 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h2><p>​其实在除了二觉单技能秒杀的情况之外，圣耀救赎武器都是要比地狱拓荒者强的，并且今后副本中的怪物在HP和防御力方面只会越来越高，即便我们现在可以在队伍顶配的情况下用二觉秒掉卢克副本中的任何怪物，但在今后的副本中，这种情况只会越来越少。到那时，装备之间的比较会越来越倾向于二者整体提升率的比较。</p>
+<p>对部分技能单独提升高的装备，在对伤害整体提升高的装备面前，可能会越来越显得无力。所以从装备和副本的发展方向来看，还是建议各位<strong>将圣耀武器作为长远使用的武器</strong>。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/06/28/超时空装备提升率分析/" data-id="ckrnaka3w002bcgukfbcokdd9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNF/">DNF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏数值分析/">游戏数值分析</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/06/28/枪剑士职业介绍及史诗武器分析/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          枪剑士职业介绍及史诗武器分析
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/28/超时空副本怪物打法/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">超时空副本怪物打法</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DNF/">DNF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNF/">DNF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MOBA/">MOBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏攻略/">游戏攻略</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏数值分析/">游戏数值分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DNF/" style="font-size: 20px;">DNF</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MOBA/" style="font-size: 10px;">MOBA</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/markdown/" style="font-size: 12.5px;">markdown</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/游戏攻略/" style="font-size: 10px;">游戏攻略</a> <a href="/tags/游戏数值分析/" style="font-size: 15px;">游戏数值分析</a> <a href="/tags/游戏策划/" style="font-size: 17.5px;">游戏策划</a> <a href="/tags/龙之谷/" style="font-size: 10px;">龙之谷</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/28/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/写在DNF十周年/">写在DNF十周年</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/搭建个人博客/">搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/">《Slay the Spire》中Roguelike元素的设计和使用</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/Markdown语法/">Markdown语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 CGnz<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

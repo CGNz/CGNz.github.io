@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>游戏中的经典AI设计：MOBA英雄AI设计分享 | CGNz&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="设计概要设计原则和目的英雄AI的目的主要有：  1.新手过渡局，让玩家刚进入到游戏时，和较弱电脑对战，培养成就感，避免尚未熟悉游戏导致的挫折流失。   2.人机对战，给玩家练习新英雄或者挑战高难度电脑的机会。   3.温暖局，对连败玩家，匹配机器人去补偿一场胜利，舒缓连败挫折。   4.掉线托管，用强度合理的AI来补位掉线玩家，减少其他在线玩家的掉线局有损体验。  英雄AI的设计原则是：优秀的AI">
+<meta name="keywords" content="游戏策划,MOBA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="游戏中的经典AI设计：MOBA英雄AI设计分享">
+<meta property="og:url" content="http://yoursite.com/2018/07/23/游戏中的经典AI设计：MOBA英雄AI设计分享/index.html">
+<meta property="og:site_name" content="CGNz&#39;s blog">
+<meta property="og:description" content="设计概要设计原则和目的英雄AI的目的主要有：  1.新手过渡局，让玩家刚进入到游戏时，和较弱电脑对战，培养成就感，避免尚未熟悉游戏导致的挫折流失。   2.人机对战，给玩家练习新英雄或者挑战高难度电脑的机会。   3.温暖局，对连败玩家，匹配机器人去补偿一场胜利，舒缓连败挫折。   4.掉线托管，用强度合理的AI来补位掉线玩家，减少其他在线玩家的掉线局有损体验。  英雄AI的设计原则是：优秀的AI">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/01treehead.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/02buy.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/03chuzhuang.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/04taowang.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/05gankact.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/06gongshi.png">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/07tui.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/08gongshi.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/09zhixing.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/10duobi.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/11gankai.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/12jiuyuan.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/13bingxian.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/14gongshi.jpg">
+<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/15gongshi.jpg">
+<meta property="og:updated_time" content="2021-07-28T03:16:37.813Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="游戏中的经典AI设计：MOBA英雄AI设计分享">
+<meta name="twitter:description" content="设计概要设计原则和目的英雄AI的目的主要有：  1.新手过渡局，让玩家刚进入到游戏时，和较弱电脑对战，培养成就感，避免尚未熟悉游戏导致的挫折流失。   2.人机对战，给玩家练习新英雄或者挑战高难度电脑的机会。   3.温暖局，对连败玩家，匹配机器人去补偿一场胜利，舒缓连败挫折。   4.掉线托管，用强度合理的AI来补位掉线玩家，减少其他在线玩家的掉线局有损体验。  英雄AI的设计原则是：优秀的AI">
+<meta name="twitter:image" content="https://github.com/CGNz/blogimage/raw/master/MOBAAI/01treehead.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="CGNz&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">CGNz&#39;s blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">鸿鹄安知燕雀之志</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-游戏中的经典AI设计：MOBA英雄AI设计分享" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/07/23/游戏中的经典AI设计：MOBA英雄AI设计分享/" class="article-date">
+  <time datetime="2018-07-23T12:44:38.000Z" itemprop="datePublished">2018-07-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/其他游戏分析/">其他游戏分析</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      游戏中的经典AI设计：MOBA英雄AI设计分享
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="设计概要"><a href="#设计概要" class="headerlink" title="设计概要"></a>设计概要</h1><h2 id="设计原则和目的"><a href="#设计原则和目的" class="headerlink" title="设计原则和目的"></a>设计原则和目的</h2><p>英雄AI的目的主要有：</p>
+<blockquote>
+<p>1.新手过渡局，让玩家刚进入到游戏时，和较弱电脑对战，培养成就感，避免尚未熟悉游戏导致的挫折流失。</p>
+</blockquote>
+<blockquote>
+<p>2.人机对战，给玩家练习新英雄或者挑战高难度电脑的机会。</p>
+</blockquote>
+<blockquote>
+<p>3.温暖局，对连败玩家，匹配机器人去补偿一场胜利，舒缓连败挫折。</p>
+</blockquote>
+<blockquote>
+<p>4.掉线托管，用强度合理的AI来补位掉线玩家，减少其他在线玩家的掉线局有损体验。</p>
+</blockquote>
+<p>英雄AI的设计原则是：<strong>优秀的AI并不要求是尽量的和人表现一致，也不是多么的精准和无懈可击，而是能够和玩家进行很好的交互，提升游戏体验。</strong></p>
+<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><p>我们的AI实现分为四个阶段，正好类似于玩家的成长。</p>
+<ul>
+<li><p><strong>第一阶段</strong>是基本战术AI，主要包括：混线，买装备，逃避危险，回城，补兵。是一种单兵作战AI。模仿新手玩家的刚刚开始学习操作。</p>
+</li>
+<li><p><strong>第二阶段</strong>是增加一些事件响应用来控制英雄的走位和换线，包括敌塔下撤退，救援己方塔，包括抱团。模仿玩家已经开始渐渐了解塔的属性，初步开始与其他玩家合作。</p>
+</li>
+<li><p><strong>第三阶段</strong>是协同战术AI，该AI周期性的判断是否应该果断出击打出一波局部进攻。它会在比较短的时间内控制局部范围内的单位一起行动，会有走位，配合使用技能等较细致的行为，是一种小团队AI。模仿玩家已经开始熟悉所有英雄，微操提升，对Gank略有心得。</p>
+</li>
+<li><p><strong>第四阶段</strong>是战略AI，整体协调全部玩家在地图上的分布，野区，兵线。模仿玩家已经有较强的团队意识，会分工和配合了。</p>
+</li>
+</ul>
+<h1 id="名词解释"><a href="#名词解释" class="headerlink" title="名词解释"></a>名词解释</h1><ul>
+<li><p>1．<strong>单体战术AI</strong>：每个英雄都会配备自己独特的战术AI，此AI将实现战斗细节，比如英雄何时该释放技能，对谁释放;如何走位规避风险或者形成Gank优势站位;怎么补兵;购买贩卖何种道具;何时追击何时逃跑等等。</p>
+</li>
+<li><p>2．<strong>全局AI</strong>：全局AI是一种综合考虑场上所有战斗因素之后对单体发布指令的控制器。全局AI所关注的事情主要有：兵线英雄的分布，Gank发动时机，逃避危险，救援建筑。全局AI是通过给单位添加指令buff和修改单体战术AI的参数来实现的。</p>
+</li>
+<li><p>3． <strong>AI参数</strong>：我们将尽可能的暴露出AI的各种行为参数，并通过AI参数来控制电脑的AI难度强度。高难度AI，意味着它优先使用较高收益的战略。而低难度AI则可以选择比较低收益的战略。我们的不同难度AI是通过修改AI的一系列参数来实现的。</p>
+</li>
+<li><p>4．<strong>行为树</strong>：树形结构的行为流程处理，每个Tick到来时，行为树按照一定的规则进行搜索和执行相应节点，直到到达某个返回true的叶节点，之后结束当前Tick。</p>
+</li>
+<li><p>5． <strong>Gank 小组</strong>：Gank小组是一个动态的局部的概念，当我方英雄A周边有敌对英雄时，英雄A就是属于某个Gank小组的，Gank小组的其他成员必须和A距离很近。</p>
+</li>
+<li><p>6． <strong>Gank 行为</strong>：Gank行为是一种对集体行为的模仿，其本质仍然是单体AI，但Gank发动时机是通过全局AI来控制的。处于Gank状态的机器人会表现出与单体行动很不一样的行为，比如坦克可能宁死也不撤退，ADC优先释放控制技能。</p>
+</li>
+</ul>
+<h1 id="行为树实现"><a href="#行为树实现" class="headerlink" title="行为树实现"></a>行为树实现</h1><h2 id="行为树脑图"><a href="#行为树脑图" class="headerlink" title="行为树脑图"></a>行为树脑图</h2><p>行为树脑图是一个多叉树，各个父节点的所有子节点节点按照从左到右、从上到下的顺序逐个检测，只要返回True了，之下的节点都不再执行。灰色注释为节点执行的先决条件，灰色节点不满足则直接返回False。脑图中的</p>
+<p>对应着行为树中的Selector节点。</p>
+<p>行为树工具基本思想都一致，但使用起来还是有较大差别的。常见的是Unity3D的BehaviorDesigner插件，虚幻4自带的行为树组件，公司内部的Behaviac。我最喜欢的是BehaviorDesigner，学习时还是推荐Behaviac，传送门：<a href="http://www.behaviac.com/language/zh/%E9%A6%96%E9%A1%B5/" target="_blank" rel="noopener">http://www.behaviac.com/language/zh/%E9%A6%96%E9%A1%B5/</a></p>
+<p>原因比较简单，只有它是中文。</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/01treehead.jpg" alt="英雄AI行为树脑图"></p>
+<p>这是一个尚未展开的行为树，每个超链接都对应一个子树，会逐个展开来讲解。</p>
+<h3 id="购买道具"><a href="#购买道具" class="headerlink" title="购买道具"></a>购买道具</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/02buy.jpg" alt="购买道具"></p>
+<p>英雄购买道具需要提前写好英雄对应的阶段道具设置。</p>
+<p>比如：</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/03chuzhuang.jpg" alt="出装流程"></p>
+<p>每隔一段时间检测一次金钱是否可以买卖下阶段的道具。</p>
+<h3 id="濒死逃亡"><a href="#濒死逃亡" class="headerlink" title="濒死逃亡"></a>濒死逃亡</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/04taowang.jpg" alt="濒死逃亡"></p>
+<h3 id="Gank战术行为"><a href="#Gank战术行为" class="headerlink" title="Gank战术行为"></a>Gank战术行为</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/05gankact.jpg" alt="Gank战术行为"></p>
+<p>每个英雄都需要单独编写此子树。首先搜寻最优攻击目标，而后检测是否能用技能组合一次秒之。</p>
+<ul>
+<li><strong>最优技能释放目标搜索</strong></li>
+</ul>
+<p>满足以下条件的单位应该优先被锁定：</p>
+<p>1.HP较低</p>
+<p>2.AP或者MP较高</p>
+<p>3.物理或魔法护甲较低</p>
+<p>4.处在友方其他英雄攻击范围内</p>
+<p>我们可以使用如下计算公式(本文里面的任何公式都不一定是最优解的，但都满足定性的设计要求)：</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/06gongshi.png" alt="最优技能释放目标搜索"></p>
+<p>其中a,b为参数，AllyNearBy为敌方英雄600码内我方英雄数量，每增加一个盟友，敌人的诱惑程度增加b。推荐参数值a=0.7, b=0.3</p>
+<p>技能是否使用只对最优释放目标进行考虑。</p>
+<h3 id="推兵线"><a href="#推兵线" class="headerlink" title="推兵线"></a>推兵线</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/07tui.jpg" alt="推兵线"></p>
+<p>英雄磨血节点需要考虑收益，计算公式：</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/08gongshi.jpg" alt></p>
+<p>收益值要考虑率较多因素，包括敌我双方血量，敌方英雄的同盟单位，收益值可能为负值。</p>
+<h3 id="执行AI行动指令"><a href="#执行AI行动指令" class="headerlink" title="执行AI行动指令"></a>执行AI行动指令</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/09zhixing.jpg" alt></p>
+<p>AI行动指令一般都是通过行为树之外的全局AI脚本来产生，并通知给AI行为树。常见的使用方式是，用一个全局AI脚本来产生各种指令，将指令传递给行为树，实现全局AI控制单位。</p>
+<h2 id="AI事件响应"><a href="#AI事件响应" class="headerlink" title="AI事件响应"></a>AI事件响应</h2><h3 id="英雄躲避塔的攻击"><a href="#英雄躲避塔的攻击" class="headerlink" title="英雄躲避塔的攻击"></a>英雄躲避塔的攻击</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/10duobi.jpg" alt></p>
+<p>避免英雄冲塔行为。</p>
+<h3 id="全局GankAI"><a href="#全局GankAI" class="headerlink" title="全局GankAI"></a>全局GankAI</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/11gankai.jpg" alt></p>
+<p>周期计算Gank形势。通知AI是否该Gank或者集体逃亡。</p>
+<h3 id="救援塔"><a href="#救援塔" class="headerlink" title="救援塔"></a>救援塔</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/12jiuyuan.jpg" alt></p>
+<p>当塔受到攻击时触发，用来产生AI指令，控制AI行为。</p>
+<h3 id="兵线分布调整"><a href="#兵线分布调整" class="headerlink" title="兵线分布调整"></a>兵线分布调整</h3><p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/13bingxian.jpg" alt></p>
+<p>当游戏运行时间超过6分钟时，AI要开始抱团，强推一路，之后每三分钟都要进行一次抱团检测。</p>
+<p>兵线危机值计算：</p>
+<p>兵线局势需要考察的因素：英雄数量，士兵数量，塔的数量，前塔的HP，推荐公式：</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/14gongshi.jpg" alt></p>
+<p>其中a,b,c为参数，Lane表示兵线1,2,3。对应10v10游戏推荐参数设置：a=8, b=2, c=6, d=0.2,e=20</p>
+<p>兵线危机值可以是负值，危机值越高则兵线越危险，值越低则兵线越安全。我们每10秒计算一次兵线危机值，根据兵线的状况来决定是否援助和抱团。</p>
+<p>抱团是一个较为稳定的行为，我们设定每次防守抱团之后都要锁定切换兵线行为3分钟，进攻抱团锁定2分钟。</p>
+<p>从另外两条兵线抽调英雄到最危险兵线。派遣数量服从规律：抽调后兵线上 我方英雄数目/敌方英雄数目&gt;0.65(参数)，尽可能多抽调英雄，但也确保不会让被抽调的兵线变得很不安全。派遣数目可以是0，表示全线吃紧，每条兵线都无法抽调英雄去支援其他兵线。初期，每条兵线最少也要保留一个英雄。</p>
+<h2 id="Gank详解"><a href="#Gank详解" class="headerlink" title="Gank详解"></a>Gank详解</h2><h3 id="Gank行为基本设定"><a href="#Gank行为基本设定" class="headerlink" title="Gank行为基本设定"></a>Gank行为基本设定</h3><ul>
+<li>首先要明确几个设计前提：</li>
+</ul>
+<p>1.Gank行为优先级要高于单体行为优先级，或者说，Gank行为执行期间会屏蔽掉大多数单体AI行为。</p>
+<p>2.Gank行为需要考虑到局部范围内(比如说整个屏幕)所有单位(包括敌方)，而后控制所有我方英雄一起行动。</p>
+<p>3.Gank AI控制下的机器人可能会表现出和单体AI完全不一致的行为，比如肉可能直接冲到敌人人堆中，吸收仇恨，至死方休;ADC和APC最优先的策略可能不是输出，而是控制;部分机器人输出伤害优先级要高于逃避危险。</p>
+<p>4.Gank行为并非常态。达成一定条件之后才会触发。比如某个时刻敌我力量对比呈现一边倒</p>
+<ul>
+<li>Gank小队的生成</li>
+</ul>
+<p>Gank是局部小团队行为。必须考察周边敌我英雄和塔的个数，英雄和塔的潜在杀伤。Gank是个局部行为，只有距离很近的那些单位才会被认为是处于同一个Gank小组内。Gank小组是个动态变化的单位组。需要每隔一段时间重新生成一次。</p>
+<p>生成方案：</p>
+<p>寻找Gank中心英雄，Gank中心英雄只是根据位置搜索产生的，并不意味着它们会在Gank中处于核心地位。每隔一个周期(2秒，参数)先遍历某阵营场上全部英雄，统计这些英雄身边敌对英雄的数目。并按照递减顺序排列。身边敌对英雄越多，该英雄越可能处于Gank中心位置。按顺序遍历己方英雄(只遍历身边有敌对英雄的)，如果它们还未参与Gank，则以该英雄为中心，在一定半径(2000，参数)内搜索敌我未参与Gank的英雄，将盟友英雄写入Gank小队，并标记它们已经参与Gank了，将敌方英雄写入Gank目标小队(目标小队并不是敌方的实际Gank小队，敌方的实际Gank小队生成方式和我方一致)。如此，所有可能正处于交战状态的英雄就按照区域划分到了不同的Gank小组。</p>
+<ul>
+<li>Gank的发起和结束</li>
+</ul>
+<p>Gank小队是动态生成的，每一时刻Gank小队都是存在的，但发起Gank行为是需要条件的。</p>
+<p>每隔一段时间要检测一下Gank小队的实力对比.</p>
+<ol>
+<li><p>如果我放Gank小队实力明显强于目标敌方小队，则发动Gank，并锁定5(参数)秒。Gank期间英雄优先执行Gank AI，屏蔽掉单体行为。Gank结束锁定后。重新生成Gank小组，重新判断形势，决定是否发起新的Gank。</p>
+</li>
+<li><p>当我方Gank小队实力明显弱于敌方时，集体执行撤退到己方前沿塔。但并不进入Gank行为。</p>
+</li>
+<li><p>均衡局面，如果有敌方单位可秒(可秒的含义是，gank小组的输出期望是目标单位hp的1.6(参数)倍)，则立刻发动Gank。否则调整我方站位，综合防御最强的英雄位置保持不变，脆皮远离敌小队中心，但不能离开坦克超过(1000参数)。调整站位是单体AI行为，战略AI通过参数来控制单体行为(发送指令buff，发送目标位置)。</p>
+</li>
+</ol>
+<h3 id="技能伤害量化"><a href="#技能伤害量化" class="headerlink" title="技能伤害量化"></a>技能伤害量化</h3><p>如果希望AI精准的释放技能，量化技能伤害是至关重要的。并不是所有技能都是直接立即伤害的，AI要怎么理解自己的被动技能和buff技能?</p>
+<p>我们做的处理是：</p>
+<p>l 默认在一次Gank周期中AI可以普通攻击三次，或者5秒。</p>
+<p>l 将被动技能，比如暴击和加速之类的，直接量化为三次攻击或5秒攻击中的伤害收益。</p>
+<p>l 晕眩技能根据晕眩时间量化成额外伤害百分比。</p>
+<p>l 辅助技能仅仅起加强队友作用的，伤害量化为0</p>
+<p>当技能全部量化成具体数字之后，就能计算每个英雄在单次Gank中的伤害输出期望值了。</p>
+<ul>
+<li><strong>英雄威胁值</strong></li>
+</ul>
+<p>我们用英雄威胁值来表征英雄在单次Gank中的伤害输出期望值。</p>
+<ul>
+<li>威胁值的计算：</li>
+</ul>
+<p>首先遍历场上所有英雄，根据英雄技能等级和CD状态预估出来技能的三种伤害(物理，魔法，真实)数据。</p>
+<p>对峙双方如果威胁值总和差别很大(参数60%)，则认为非均衡局面出现。优势一方会立刻发起Gank，进入团战模式。而劣势一方会立刻进入集体撤退状态。</p>
+<p>威胁值相差不是很大时，英雄表现为单兵行动。此时威胁值的主要作用是敌对目标选择。</p>
+<h3 id="GankTarget选择"><a href="#GankTarget选择" class="headerlink" title="GankTarget选择"></a>GankTarget选择</h3><p>GankTarget的选择方式——寻找最具吸引力的敌方单位，改进版的吸引力公式：</p>
+<p><img src="https://github.com/CGNz/blogimage/raw/master/MOBAAI/15gongshi.jpg" alt></p>
+<p>这个公式综合考虑的因素有：敌人是否高AD或者高AP?物理护甲和魔法护甲如何?当前血量?我方集火的情况下，伤害总输出能杀死他几次?</p>
+<p>最大吸引值得敌方英雄会成为Gank小组的共同目标</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在本文中，我们按照从零开始逐步展开，完整描述了MOBA英雄AI的设计流程。限于篇幅，我们仅仅描述了最核心的框架，诸多细节都未展开。在手游 MOBA《全民超神》项目中，按照这个框架，我们在短短一个月时间内就实现了英雄AI。</p>
+<p>本方案原创了两个核心设定：Gank和技能伤害量化。</p>
+<p>Gank的设定让AI能够有效的躲避危险，也能很精准的捕捉战机，完成很多让人赞叹的绝妙击杀。</p>
+<p>伤害量化，让AI理解自己技能的特性。对AI行为收益优化帮助很大。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/07/23/游戏中的经典AI设计：MOBA英雄AI设计分享/" data-id="ckrnaka3b0011cguku0d48tqq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MOBA/">MOBA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏策划/">游戏策划</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/08/21/Java学习笔记/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/06/28/枪剑士职业介绍及史诗武器分析/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">枪剑士职业介绍及史诗武器分析</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DNF/">DNF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNF/">DNF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MOBA/">MOBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏攻略/">游戏攻略</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏数值分析/">游戏数值分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/DNF/" style="font-size: 20px;">DNF</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MOBA/" style="font-size: 10px;">MOBA</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/markdown/" style="font-size: 12.5px;">markdown</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/游戏攻略/" style="font-size: 10px;">游戏攻略</a> <a href="/tags/游戏数值分析/" style="font-size: 15px;">游戏数值分析</a> <a href="/tags/游戏策划/" style="font-size: 17.5px;">游戏策划</a> <a href="/tags/龙之谷/" style="font-size: 10px;">龙之谷</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/07/28/test/">test</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/写在DNF十周年/">写在DNF十周年</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/搭建个人博客/">搭建个人博客</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/">《Slay the Spire》中Roguelike元素的设计和使用</a>
+          </li>
+        
+          <li>
+            <a href="/2021/07/28/Markdown语法/">Markdown语法</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2021 CGnz<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
