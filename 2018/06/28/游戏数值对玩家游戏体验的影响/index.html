@@ -1,108 +1,224 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>游戏数值对玩家游戏体验的影响 | CGNz&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文撰写的时间较早，后续对DNF游戏系统及机制有更深入的理解，详细可见博客的另一篇文章《写在DNF十周年》  前言绝大多数游戏都存在着两个循环：角色属性养成积累循环和玩家技能提升循环。对于大多数角色扮演类的网络游戏来说，主要还是在于角色属性的养成循环。而决定游戏角色的成长最为关键的就是数值的成长，良好的数值成长能够决定许多玩家的游戏体验，进而影响到游戏发展和收益。从两款角色扮演游戏（龙之谷、地下">
-<meta name="keywords" content="DNF,游戏策划,龙之谷">
-<meta property="og:type" content="article">
-<meta property="og:title" content="游戏数值对玩家游戏体验的影响">
-<meta property="og:url" content="http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/index.html">
-<meta property="og:site_name" content="CGNz&#39;s blog">
-<meta property="og:description" content="本文撰写的时间较早，后续对DNF游戏系统及机制有更深入的理解，详细可见博客的另一篇文章《写在DNF十周年》  前言绝大多数游戏都存在着两个循环：角色属性养成积累循环和玩家技能提升循环。对于大多数角色扮演类的网络游戏来说，主要还是在于角色属性的养成循环。而决定游戏角色的成长最为关键的就是数值的成长，良好的数值成长能够决定许多玩家的游戏体验，进而影响到游戏发展和收益。从两款角色扮演游戏（龙之谷、地下">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-DN/DN.png">
-<meta property="og:updated_time" content="2021-07-28T03:16:37.814Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="游戏数值对玩家游戏体验的影响">
-<meta name="twitter:description" content="本文撰写的时间较早，后续对DNF游戏系统及机制有更深入的理解，详细可见博客的另一篇文章《写在DNF十周年》  前言绝大多数游戏都存在着两个循环：角色属性养成积累循环和玩家技能提升循环。对于大多数角色扮演类的网络游戏来说，主要还是在于角色属性的养成循环。而决定游戏角色的成长最为关键的就是数值的成长，良好的数值成长能够决定许多玩家的游戏体验，进而影响到游戏发展和收益。从两款角色扮演游戏（龙之谷、地下">
-<meta name="twitter:image" content="https://github.com/CGNz/blogimage/raw/master/DNF-DN/DN.png">
-  
-    <link rel="alternate" href="/atom.xml" title="CGNz&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8">
+    
+    
+    <title>游戏数值对玩家游戏体验的影响 | CGNz&#39;s blog | 鸿鹄安知燕雀之志</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="DNF,游戏策划,龙之谷">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
 </head>
-</html>
+
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">CGNz&#39;s blog</a>
-      </h1>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">鸿鹄安知燕雀之志</a>
-        </h2>
+      <img src="/img/brand.jpg" class="brand-bg">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CGnz</h5>
+          <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">
+            
+              <span>2</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>3</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>9</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
         
-          <a class="main-nav-link" href="/">Home</a>
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/codefine" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-游戏数值对玩家游戏体验的影响" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2018/06/28/游戏数值对玩家游戏体验的影响/" class="article-date">
-  <time datetime="2018-06-27T16:39:29.000Z" itemprop="datePublished">2018-06-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/DNF/">DNF</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
-  
-    <h1 class="article-title" itemprop="name">
-      游戏数值对玩家游戏体验的影响
-    </h1>
-  
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-plus-square"></i>
+                CUSTOM
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
 
-      </header>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>游戏数值对玩家游戏体验的影响</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">游戏数值对玩家游戏体验的影响</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-06-27T16:39:29.000Z" itemprop="datePublished" class="page-time">
+  2018-06-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/DNF/">DNF</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-游戏数值对玩家游戏体验的影响"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">游戏数值对玩家游戏体验的影响</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-06-28 00:39:29" datetime="2018-06-27T16:39:29.000Z"  itemprop="datePublished">2018-06-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/DNF/">DNF</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <ul>
 <li>本文撰写的时间较早，后续对DNF游戏系统及机制有更深入的理解，详细可见博客的另一篇文章<a href="https://cgnz.github.io/2018/06/12/%E5%86%99%E5%9C%A8DNF%E5%8D%81%E5%91%A8%E5%B9%B4/" target="_blank" rel="noopener"><strong>《写在DNF十周年》</strong></a></li>
 </ul>
 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>绝大多数游戏都存在着两个循环：角色属性养成积累循环和玩家技能提升循环。对于大多数角色扮演类的网络游戏来说，主要还是在于角色属性的养成循环。而决定游戏角色的成长最为关键的就是数值的成长，良好的数值成长能够决定许多玩家的游戏体验，进而影响到游戏发展和收益。从两款角色扮演游戏（龙之谷、地下城与勇士）及英雄联盟部分百分比增益属性进行粗浅分析。</p>
 <h1 id="DN-单个属性的极端成长"><a href="#DN-单个属性的极端成长" class="headerlink" title="DN-单个属性的极端成长"></a>DN-单个属性的极端成长</h1><p>龙之谷中，玩家的攻击属性除了常规的三维（力量、敏捷、智力）分别对不同职业有着不同的加成，属性攻击、以及致命一击（即暴击，上限89％）外，还有着一个在所有伤害计算的最后在进行加成的属性——最终伤害。最终伤害应用于所有攻击加成计算之后，计算在致命一击之后，致命一击仅仅是将伤害翻倍。最终伤害可以堆到100%。即在忽视防御属性的时候，玩家打出了10000伤害后，如果暴击，则会造成20000伤害，而在这些计算之后，才会计算最终伤害，如果最终伤害堆到100％后，则会将伤害再度翻倍到40000。而且对于属性伤害也是累计的乘算。可以说最终伤害可以将玩家之间差距翻倍也是每个玩家都可以堆叠出一定的最终伤害值来提升自己伤害。</p>
-<p><img src="https://github.com/CGNz/blogimage/raw/master/DNF-DN/DN.png" alt="龙之谷最终伤害数值与收益率曲线图（80级）"></p>
+<p><a rel=游戏数值对玩家游戏体验的影响 href="https://github.com/CGNz/blogimage/raw/master/DNF-DN/DN.png" title="龙之谷最终伤害数值与收益率曲线图（80级）" data-fancybox="images"><img src="https://github.com/CGNz/blogimage/raw/master/DNF-DN/DN.png" alt="龙之谷最终伤害数值与收益率曲线图（80级）"></a></p>
 <p>但是，最终伤害的堆叠曲线对于普通的平民玩家是很不友好的。在大多数人都能达到的最终伤害值的情况下，超过质变点，最终伤害的转换的收益是比较低的，而能够通过一些昂贵的特殊再往上堆叠数值后，最终伤害的收益才会成倍数的增长，可以说有了最终伤害这个属性，让这款游戏玩家之间有了质的差距，也让“充钱”的收益变得更加立竿见影。</p>
 <h1 id="DNF-多属性的缓和稀释"><a href="#DNF-多属性的缓和稀释" class="headerlink" title="DNF-多属性的缓和稀释"></a>DNF-多属性的缓和稀释</h1><p>在地下城与勇士中，85版本的伤害词缀有伤害增加（黄字）、暴击伤害增加（爆伤）以及附加伤害（白字），其中前两者都是会冲突的属性（只会取身上装备属性的最高者），而附加伤害则是相互加算的，而且会因为加算的变多而受益递减，即所谓的稀释、边际效应。<br>而到了90版本后，增加了多种伤害机制，有额外增伤，额外爆伤，最终伤害（所攻），技能攻击力和攻击力增加（三攻），此外还有特殊减益机制无视防御力和减少防御力。额外增伤、爆伤、最终伤害、三攻加成都是加算，因而存在属性值较高时的稀释。而技能攻击力则是相互乘算，不存在稀释，因而属性值也显得十分珍贵。再看减益，无视防御也是取最高值，而减防，则是相互乘算。结合免伤率公式，乍看之下可以将通过减防效果的叠加敌人的防御力下降到0，实现所谓的“十倍增伤”，但是这个小漏洞很快就被修复了，在团本和高级的副本中敌人的防御力不会低于一定值，即所谓的减防下限。总结起来就是，玩家可以把各种属性进行合理搭配，同时堆出一定量值，但是随着属性上升到一定值后，收益就会下降。加之游戏内装备的属性，大部分人通过合理的搭配都能把各项属性值堆到一个相对较高但是又不是极端的水平，和土豪的玩家为了追求极限的伤害把属性值继续堆高收益就会有所下降。</p>
 <h2 id="边际效应："><a href="#边际效应：" class="headerlink" title="边际效应："></a>边际效应：</h2><p>在0白字的基础上带上10%白字，收益率为110%/100%-100%=10%，如果在这个基础上再增加一条10%白字那么收益率就变成(110+10%)/110%-1=9.0909%了，以此类推收益率会逐渐降低。</p>
@@ -121,147 +237,302 @@
 <h2 id="2-游戏经济循环的问题"><a href="#2-游戏经济循环的问题" class="headerlink" title="2.游戏经济循环的问题"></a>2.游戏经济循环的问题</h2><p> 在玩龙之谷的时候，许多顶级的装备都是不可交易的，副本的收益大多数都是材料而非交易用的金币，只有副本里较低概率产出的装备比较值钱，因而普通玩家在不花大量时间的情况下收益相当低，甚至可以忽略不计，而对身上的装备养成都需要在游戏外来进行资源的支持（充钱）；而地下城与勇士的搬砖收益则相当可观，一个账号满疲劳一天（刷完疲劳大部分只需要半小时左右）下来可以收入3-5R人民币所价值的金币，原因除了通关副本后的大量金币奖励之外，还有副本产出的硬通货，团队副本的门票，绝大多数玩家都需要通过每周刷新的团队副本来获得提升自己装备的材料（深渊派对邀请函以及史诗灵魂）。因而玩家只要能够花上一定的时间，就能够实现所谓的“自给自足”，这种做法一定上提高了游戏用户的粘度，也使得玩家不会因为装备和材料的高价而产生挫败感和距离感。</p>
 <h2 id="3-游戏关卡设计"><a href="#3-游戏关卡设计" class="headerlink" title="3.游戏关卡设计"></a>3.游戏关卡设计</h2><p> 我曾经跟别人吹牛的时候说道，当一款角色扮演类游戏土豪极限玩家所造成的伤害在普通玩家的三倍以上的时候，这个游戏就黄了，彻底成为砸钱氪金的游戏，如今看来，这个观点未免太过肤浅。龙之谷土豪与平民的差距在3-4倍左右，而地下城与勇士中这个差距也不比龙之谷低，甚至能够达到5倍以上。游戏角色自身的数值只是游戏核心的一部分，而想要让玩家体会到游戏核心的玩法和乐趣，关卡的设计更为重要。龙之谷的关卡（副本）的门槛是分级的，加上各种角色的定位分工类似魔兽世界（奶、T、主DPS、辅助型DPS等），普通的高级副本2-4个普通玩家可以刷的过去，而龙本又分为普通和硬核，普通级别的副本8个玩家在熟练的情况下，是能够顺利通关的，而硬核本的难度则较大，怪物机制难度增大，通常需要1-2个装备较好的DPS以及辅助相互配合才能够顺利通过，整体门槛在普通玩家之上，到后期就会出现所谓的金团（花钱请别人带过）。而版本后期，在大部分玩家的装备强度通过硬核龙本上升到更高层次后，会出现新的龙本，及开荒的龙本，此时这个开荒的副本门槛则更高，甚至会有全服首通奖励的存在，需要数个土豪级别的高玩前往开荒，在通关之后发出攻略等视频或者等到新的版本和等级开放，后面的玩家才能通过提升等级来通过。这种门槛淹没大部分玩家的关卡难度门槛设定虽然能够提升玩家不断挑战提升自己操作的快乐感，但对于伤害的门槛设定（如新副本需要在特定数秒内打出一定的输出否则团灭失败）有时候会让玩家有空有一身水平却无法施展的挫败感（甚至无法完成组队进入副本进行挑战），在心流体验中技术跟不上挑战难度，进而让玩家萌生退意。地下城与勇士则反其道而行之，早期的DNF副本同样十分困难，玩家当时的核心体验在于升级，面对同等级的副本进行挑战，成功之后的愉悦让许多老玩家印象深刻，而后来Neople及时作出了相应的改动，（大转移篇）角色的伤害翻倍提升，升级所需经验大大降低，后期还根据剧情推出了团队的副本并给予极高的奖励，这时候玩家的核心体验就变成了满级后通过远古图做出基本的装备，然后挑战深渊派对刷出自己所需的史诗装备，然后进入团本进行开荒。又如前面所说的，DNF的玩家间的差距虽然很大，但是为什么不会让玩家产生挫败感呢，原因就在于团队副本随着版本的更新难度变得越来越低，后期的门槛在绝大多数玩家角色之下。原来的开荒固定团才能通过到后期变成了流水的野团，甚至只需要少数装备好的搭配上辅助职业便可以通关团队副本，加上高额的奖励使得玩家对副本的依赖变得很大，而新出现的团本与此前的团本难度对接上也比较流畅，通过旧团本打造出来的角色可以较好的通关新的副本，因此许多玩家都能在新副本出现后第一时间通关，享受征服的乐趣。而通过新副本而提升的装备更能让自己在副本的表现中“叱咤风云”，满足玩家的成就感。简单来说就是“平民通、土豪秒”，每个玩家都能在自己的舒适圈内“装逼”。为了防止土豪玩家的较早毕业觉得无聊，加之游戏本身底蕴的积累，游戏内部的冒险团功能，让玩家乐于去新建小号培养，更能通过大号养小号，让游戏的乐趣得以延续。本来作为2D横版游戏的DNF，将自身难以硬核的劣势化为优势，让各种玩家都能体会到游戏的乐趣，吸引着越来越多的新老玩家。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/" data-id="ckrnaka36000ucguk77sl7r3l" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNF/">DNF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-07-28T03:16:37.814Z" itemprop="dateUpdated">2021-07-28 11:16:37</time>
+</span><br>
 
+
+        
+        转载注明出处，原文地址：<a href="/2018/06/28/游戏数值对玩家游戏体验的影响/" target="_blank" rel="external">http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="CGnz">
+            CGnz
+        </a>
     </footer>
-  </div>
-  
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNF/">DNF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
+
+            <div class="page-share-wrap">
     
-<nav id="article-nav">
-  
-    <a href="/2018/06/28/超时空副本怪物打法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          超时空副本怪物打法
-        
-      </div>
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/&title=《游戏数值对玩家游戏体验的影响》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/&title=《游戏数值对玩家游戏体验的影响》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
     </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
   
+    <div class="prev">
+      <a href="/2018/06/28/超时空副本怪物打法/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">超时空副本怪物打法</h4>
+      </a>
+    </div>
   
-    <a href="/2018/06/03/DNF中的伤害类型介绍/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">DNF中的伤害类型介绍</div>
-    </a>
+
+  
+    <div class="next">
+      <a href="/2018/06/03/DNF中的伤害类型介绍/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">DNF中的伤害类型介绍</h4>
+      </a>
+    </div>
   
 </nav>
 
-  
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#DN-单个属性的极端成长"><span class="post-toc-number">2.</span> <span class="post-toc-text">DN-单个属性的极端成长</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#DNF-多属性的缓和稀释"><span class="post-toc-number">3.</span> <span class="post-toc-text">DNF-多属性的缓和稀释</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#边际效应："><span class="post-toc-number">3.1.</span> <span class="post-toc-text">边际效应：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#技能攻击力乘算："><span class="post-toc-number">3.2.</span> <span class="post-toc-text">技能攻击力乘算：</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#减防免伤率计算："><span class="post-toc-number">3.3.</span> <span class="post-toc-text">减防免伤率计算：</span></a></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#分析"><span class="post-toc-number">4.</span> <span class="post-toc-text">分析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#1-数值方面的原因"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">1.数值方面的原因</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#2-游戏经济循环的问题"><span class="post-toc-number">4.2.</span> <span class="post-toc-text">2.游戏经济循环的问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#3-游戏关卡设计"><span class="post-toc-number">4.3.</span> <span class="post-toc-text">3.游戏关卡设计</span></a></li></ol></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
 </article>
 
-</section>
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我们一起来让这个世界有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-          <aside id="sidebar">
-  
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DNF/">DNF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
-    </div>
-  </div>
 
+</div>
 
-  
+    </main>
+    <footer class="footer ">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNF/">DNF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MOBA/">MOBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏攻略/">游戏攻略</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏数值分析/">游戏数值分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
-    </div>
-  </div>
-
-
-  
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/DNF/" style="font-size: 20px;">DNF</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MOBA/" style="font-size: 10px;">MOBA</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/markdown/" style="font-size: 12.5px;">markdown</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/游戏攻略/" style="font-size: 10px;">游戏攻略</a> <a href="/tags/游戏数值分析/" style="font-size: 15px;">游戏数值分析</a> <a href="/tags/游戏策划/" style="font-size: 17.5px;">游戏策划</a> <a href="/tags/龙之谷/" style="font-size: 10px;">龙之谷</a>
-    </div>
-  </div>
-
-  
+    <span class="blogroll-item">
+        <a href="https://www.lujingtao.com" target="_blank">HOME</a>
+    </span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+</p>
+
+        
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/07/28/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/写在DNF十周年/">写在DNF十周年</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/搭建个人博客/">搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/">《Slay the Spire》中Roguelike元素的设计和使用</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/Markdown语法/">Markdown语法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    <div class="bottom">
+        <p>
+            <span>
+                CGnz &copy; 2017 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">hexo-theme-mellow</a>
+            </span>
+            
+            
+            
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 CGnz<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
     </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/&title=《游戏数值对玩家游戏体验的影响》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2018/06/28/游戏数值对玩家游戏体验的影响/&title=《游戏数值对玩家游戏体验的影响》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuUlEQVR42u3aS5LbMAwFQN//0klVthNJ7xGkPIvWyuWPyOZCgAF8PvH159919f7Vp1ff/Hn9XOX+080XHh4e3tLW24Wvfnu/uavjSDD3d7s8aDw8PLxjvPtgsLbddnPt6lEAw8PDw/sqr01tJweUBB48PDy8389riwhrj/61hBsPDw/vfV4CuH+nLfvmR5AElQ21Fjw8PLyYt5Ycf/f1wf4eHh4e3qCrPg8S7YN70vT6zyp4eHh4B3jJTfOiwNpIQX4cay0xPDw8vBO8tc3l4wJt+XU+RvBQq8bDw8Mb85I/+cmSa6R2gCBP4vHw8PDO8fb++Z+0/9vkvi554OHh4W3iTUq3a4/vyT3rxhgeHh7eVt7eBSZl1rX2WFRfwcPDwzvG2/Xo39Dsj0vDD3vGw8PDO8DLm095opw/9IusfzCOgIeHh/cOLy+nzset8mR9Q38PDw8Pb8xba+rvHQXI18rLwZ/JRvHw8PDiHDi/dZ6Ct9tth6iiaQg8PDy8w7w8qc0XuE+IR/8G2mYYHh4e3pi36zE9CRX54eaH9dkbhfDw8PCCkkRbfm3Lvu1wwCiA4eHh4b3Cm1xtcpwfU5ua4+Hh4Z3mJe2otgCRp+Nt2TdPwfHw8PBO8PKEtb5dWVBohwzqhB4PDw9vzDvRuJoMYK2VLR56enh4eHgHeEnEaIPE2qbzABMl33h4eHgHePlNd5UP8tS5HT54qLXg4eHhbeK1RYFdgwVrKXV9Bzw8PLzDvLwN1m5o7c7Jp3h4eHjv8+ajVG2DKg8kRblhHmbw8PDwSt7aFttmVbutfNjr4bd4eHh4x3jvBIM2mc6P8vJXeHh4eF/lrW0l+eZ9GFgbZcDDw8P7bby25b9WetgwoICHh4d3jNc2vXaFk3mpIkqp8fDw8Lby2gbYfCvtN/Py8YbRATw8PLy76y8qx9B1y7PuhAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
 
 
 
-  </div>
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+    
 </body>
 </html>

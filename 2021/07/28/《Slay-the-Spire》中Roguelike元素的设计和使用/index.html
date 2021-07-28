@@ -1,103 +1,219 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="utf-8">
-  
-
-  
-  <title>《Slay the Spire》中Roguelike元素的设计和使用 | CGNz&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="随机并行学习许多游戏中，针对不同的关卡，游戏设计有许多不同种类的熟练度类型。玩家在不同的时间里，根据客观的需要或者是潜意识的驱使，他们决定去掌握一些技能，或者无意识地学到了一些技能。在游戏中设置需要掌握的东西越多，就相当于更少地限制玩家掌握某一项特定的东西，从而能在游戏过程中给予玩家一种“我明白了！”的感觉，这种体验是非常棒的，会让玩家觉得他们真正学到了东西，让游戏的体验更加充实。此外，这种设定">
-<meta name="keywords" content="DNF,游戏策划">
-<meta property="og:type" content="article">
-<meta property="og:title" content="《Slay the Spire》中Roguelike元素的设计和使用">
-<meta property="og:url" content="http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/index.html">
-<meta property="og:site_name" content="CGNz&#39;s blog">
-<meta property="og:description" content="随机并行学习许多游戏中，针对不同的关卡，游戏设计有许多不同种类的熟练度类型。玩家在不同的时间里，根据客观的需要或者是潜意识的驱使，他们决定去掌握一些技能，或者无意识地学到了一些技能。在游戏中设置需要掌握的东西越多，就相当于更少地限制玩家掌握某一项特定的东西，从而能在游戏过程中给予玩家一种“我明白了！”的感觉，这种体验是非常棒的，会让玩家觉得他们真正学到了东西，让游戏的体验更加充实。此外，这种设定">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="https://github.com/CGNz/blogimage/raw/master/Slay%20the%20Spire/1.png">
-<meta property="og:updated_time" content="2021-07-28T03:16:37.811Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Slay the Spire》中Roguelike元素的设计和使用">
-<meta name="twitter:description" content="随机并行学习许多游戏中，针对不同的关卡，游戏设计有许多不同种类的熟练度类型。玩家在不同的时间里，根据客观的需要或者是潜意识的驱使，他们决定去掌握一些技能，或者无意识地学到了一些技能。在游戏中设置需要掌握的东西越多，就相当于更少地限制玩家掌握某一项特定的东西，从而能在游戏过程中给予玩家一种“我明白了！”的感觉，这种体验是非常棒的，会让玩家觉得他们真正学到了东西，让游戏的体验更加充实。此外，这种设定">
-<meta name="twitter:image" content="https://github.com/CGNz/blogimage/raw/master/Slay%20the%20Spire/1.png">
-  
-    <link rel="alternate" href="/atom.xml" title="CGNz&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    <meta charset="utf-8">
+    
+    
+    <title>《Slay the Spire》中Roguelike元素的设计和使用 | CGNz&#39;s blog | 鸿鹄安知燕雀之志</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="keywords" content="DNF,游戏策划">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css">
+    <link rel="stylesheet" href="/css/style.css?v=1.4.4">
+    
+    <script type="text/javascript">
+        // Data Center
+        var DC = {
+            reward:	true,
+            lv: JSON.parse('{"enable":false,"app_id":null,"app_key":null,"icon":true}'),
+            v: JSON.parse('{"enable":false,"appid":null,"appkey":null,"notify":true,"verify":true,"placeholder":"give me some sugers plz...","avatar":"wavatar"}'),
+            g: JSON.parse('{"enable":false,"lazy":true,"owner":"codefine","repo":"gitment","oauth":{"client_id":null,"client_secret":null},"perPage":10}'),
+            d: JSON.parse('{"app_id":null}')
+        };
+    </script>
+    <script type="text/javascript">
+        window.lazyScripts=[];
+    </script>
+    
 </head>
-</html>
+
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">CGNz&#39;s blog</a>
-      </h1>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="">
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap">
       
-        <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">鸿鹄安知燕雀之志</a>
-        </h2>
+      <img src="/img/brand.jpg" class="brand-bg">
       
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">CGnz</h5>
+          <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">
+            
+              <span>2</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>1</span>
+            
+              <span>3</span>
+            
+              <span>3</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>9</span>
+            
+              <span>@</span>
+            
+              <span>q</span>
+            
+              <span>q</span>
+            
+              <span>.</span>
+            
+              <span>c</span>
+            
+              <span>o</span>
+            
+              <span>m</span>
+            
+          </a>
+        </hgroup>
         
-          <a class="main-nav-link" href="/">Home</a>
+        <ul class="menu-link">
+          
+              <li>
+                <a href="https://github.com/codefine" target="_blank">
+                  <i class="icon icon-lg icon-github"></i>
+                </a>
+              </li>
+            
+        </ul>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
       </div>
     </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-《Slay-the-Spire》中Roguelike元素的设计和使用" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/" class="article-date">
-  <time datetime="2021-07-28T03:16:37.811Z" itemprop="datePublished">2021-07-28</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/其他游戏分析/">其他游戏分析</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
         
-  
-    <h1 class="article-title" itemprop="name">
-      《Slay the Spire》中Roguelike元素的设计和使用
-    </h1>
-  
+            <li class="">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                HOME
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                CATEGORIES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                TAGS
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                ARCHIVES
+              </a>
+            </li>
+        
+            <li class="">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-plus-square"></i>
+                CUSTOM
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
 
-      </header>
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row clearfix">
+        <a href="javascript:;" class="header-icon pull-left waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">
+            <span>《Slay the Spire》中Roguelike元素的设计和使用</span>
+            
+        </div>
+        
+        <a href="javascript:;" id="site_search_btn" class="header-icon pull-right waves-effect waves-circle waves-light">
+            <i class="icon icon-lg icon-search"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+    <img src="/img/banner.jpg" class="header-bg">
+    <div class="container fade-scale">
+        <h1 class="title">《Slay the Spire》中Roguelike元素的设计和使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-28T03:16:37.811Z" itemprop="datePublished" class="page-time">
+  2021-07-28
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li></ul>
+
+            
+        </h5>
+        
+    </div>
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://github.com/CGNz/blogimage/raw/master/Slay%20the%20Spire/1.png" alt="Slay the Spire"></p>
+
+</header>
+
+<div id="site_search">
+    <div class="search-title clearfix">
+        <span class="pull-left">
+          <i class="icon icon-lg icon-search"></i>
+        </span>
+        <input type="text" id="local-search-input" name="q" results="0" placeholder="search my blog..." class="form-control pull-left"/>
+        <a href="javascript:;" class="close pull-right waves-effect waves-circle waves-light">
+          <i class="icon icon-lg icon-close"></i>
+        </a>
+    </div>
+    <div id="local-search-result"></div>
+</div>
+
+
+<div class="container body-wrap">
+    <article id="post-《Slay-the-Spire》中Roguelike元素的设计和使用"
+  class="post-article article-type-post" itemprop="blogPost">
+    <div class="post-card">
+        <h1 class="post-card-title">《Slay the Spire》中Roguelike元素的设计和使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-28 11:16:37" datetime="2021-07-28T03:16:37.811Z"  itemprop="datePublished">2021-07-28</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li></ul>
+
+
+
+            
+
+            
+
+
+            
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            
+            <p><a rel=《Slay the Spire》中Roguelike元素的设计和使用 href="https://github.com/CGNz/blogimage/raw/master/Slay%20the%20Spire/1.png" title="Slay the Spire" data-fancybox="images"><img src="https://github.com/CGNz/blogimage/raw/master/Slay%20the%20Spire/1.png" alt="Slay the Spire"></a></p>
 <h1 id="随机并行学习"><a href="#随机并行学习" class="headerlink" title="随机并行学习"></a>随机并行学习</h1><p>许多游戏中，针对不同的关卡，游戏设计有许多不同种类的熟练度类型。玩家在不同的时间里，根据客观的需要或者是潜意识的驱使，他们决定去掌握一些技能，或者无意识地学到了一些技能。在游戏中设置需要掌握的东西越多，就相当于更少地限制玩家掌握某一项特定的东西，从而能在游戏过程中给予玩家一种“我明白了！”的感觉，这种体验是非常棒的，会让玩家觉得他们真正学到了东西，让游戏的体验更加充实。此外，这种设定是关于当人们有动力时，他们所倾向如何学习，来突破困难从而达到目标。<br>杀戮尖塔中，玩家所选择的路线总不是一成不变的，因此对阵的怪物和遇见的事件总是不相同的，自身的卡组和遗物都不尽相同，这时候，一些卡组和遗物，遇见的怪物在某种情况下会产生不同的效应，比如以中毒为主的卡组面对长期高护甲的怪物就会特别舒服（毒伤无视护甲），而在面对多怪物强攻击的则会十分吃力（多回合难以应付，缺少爆发秒怪），因此玩家会在多样的游戏中学习到不同的东西，游玩的过程也是不断提升熟练度的过程。</p>
 <h1 id="非胜即零（Hero-or-Zero）"><a href="#非胜即零（Hero-or-Zero）" class="headerlink" title="非胜即零（Hero or Zero）"></a>非胜即零（Hero or Zero）</h1><p>在roguelike游戏中，对于游戏中的永久死亡，以及游戏内的艰难地成长，在此设定下，玩家对失败有所预期，因而会具有寻求能够成长和进步的思维倾向，成长和进步在roguelike游戏中意味的就是进一步地熟练掌握通关的方法和技巧；除此之外，由于失败是游戏中大多数时候默认的状况，玩家们总会记住自己游戏过程中那些精彩的、高光的片段，比如做了一些酷炫的事，或者在某一个boss关卡虎口脱险侥幸逃脱等等。有了相对稀有的体验，这种强烈的对比会让玩家更容易记住积极的体验。在这种设计之下，玩家会选择去“原谅”设计者的高难度关卡，而非去责难其为“糟糕”的设计。<br>（记住超棒的回合或者是完美的胜利，却记不太清，那些角色死亡的时刻，即便自己的死亡失败次数达到了一个相当高的数值）毕竟，关卡和玩法的设计就是为了让玩家体验到那些精彩的游戏时刻。<br>做法：让玩家有能够变得很强的设定；增加一些仪式感的元素和设定，让玩家知道自己所完成的成就很重要，增强玩家积极的游戏体验；PS：创造游戏进程外的成长空间</p>
 <h1 id="道具多样化与限制使用"><a href="#道具多样化与限制使用" class="headerlink" title="道具多样化与限制使用"></a>道具多样化与限制使用</h1><p>在roguelike游戏中，玩家会获得各式各样的道具去面对各种各样的挑战，然而，玩家获得的道具都不是全能的，而且大多数情况下，游戏会限制玩家去使用那些强力的道具，或者是使用一些次级的道具甚至没有道具，通过设计创造使用道具的情境，去鼓励玩家学习玩家使用各种道具，让他们去斟酌、去选择已有的道具和使用组合，而非让玩家去过多地、持续性的使用相同的道具或是相同的思路。这种做法让玩家对大部分的内容感到有趣和兴奋，而非漠不关心。<br>在杀戮尖塔中，有接近200多个遗物，遗物的效能也各不相同；许多遗物属性看上去十分诱人，但是使用上总是有许多限制，比如“符文十二面体”，虽然能够在每回合提供多一点能量，但是必须要在自身血量为满的时候生效，这是玩家就必须小心的使用格挡，或者通过一些生命恢复的手段让自己的生命在战斗的时候维持。<br>做法：道具应该有限制，短时间内使用，多种选一，长CD，需要使用技巧的道具，让限制变得自然，当道具过强的时候，“是否是在潜在地削弱游戏性”，但也需要一些强力的道具去维持游戏的深层元素，如“非胜即零”的模式是需要强道具去实现的。因此需要在道具的强度和可用性上达到平衡，让玩家进入思考与权衡的模式。</p>
@@ -106,147 +222,302 @@
 <h1 id="多样性但非随机性"><a href="#多样性但非随机性" class="headerlink" title="多样性但非随机性"></a>多样性但非随机性</h1><p>Roguelike游戏基本都具有随机性的特征，玩家虽然热爱多样化，喜欢富有变化的体验，这样能更好的实践随机并行学习、熟练度等模式，保持趣味性；但是过于随机的模式有的时候反而会丧失一定的趣味，比如在游戏中，连续随机到了相对孤立的卡牌组合，或者是强度较弱的卡牌，则在这次的挑战中可以说是“基本凉了”，因为卡牌的强度并非总能通过操作弥补的。因此在某次挑战中，最终所能达到的层数取决于前期的“积累”，这也是这个游戏稍有不足可以改进的地方。在随机性的程度上可以做一些改进，在“无意”中给予玩家一些相对强力卡牌。</p>
 <h1 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h1><p>这篇文章是根据一个游戏开发者的讲座，总结出的一些roguelike元素的要点，并通过游玩体验《杀戮尖塔》来分析游戏中这些元素的体现，加深自身对游戏的理解。而由于时间的关系，对这款游戏的体验并不够深，无法完全体验这款游戏的深度和广度，不可否认的是这款游戏这些方面都已经非常优秀，很好的融入了roguelike游戏的特点，是一款值得深入游玩的游戏。<br>另外分析一下国内游戏使用roguelike元素的限制。第一点，国内游戏与国外游戏不同，对于国外的游戏，大多都是先付费购买，再体验游玩的，具有一定的门槛，加入了roguelike元素后，游戏变得相对硬核，玩家可能在遇到挫折的时候会想：“我都买了这款游戏了，总得把他玩完体验一遍才物有所值吧”，因此这些玩家会“被迫的”玩下去，进而体验到游戏困难之外的魅力；而国内游戏大多免费，准入门槛很低，在玩家遇到困难而短时间得不到解决的时候，玩家甚至会直接放弃这款游戏，因而这些较为硬核的设定难以在游戏中开展，或者说设计出来却得不到玩家的肯定。此外更重要的一点，roguelike元素在设计多人模式的时候是有困难的，设计者难以在关卡和多个玩家之间找到相对的平衡，国外带有roguelike元素的游戏大多为单机的独立游戏，而国内市场还是以MMO为主，所以这些设定的实现也有待设计者在未来去实现。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/" data-id="ckrnaka2r000hcgukh6i8fp1k" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNF/">DNF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏策划/">游戏策划</a></li></ul>
+        </div>
+        
+<blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    Last updated: <time datetime="2021-07-28T03:16:37.811Z" itemprop="dateUpdated">2021-07-28 11:16:37</time>
+</span><br>
 
+
+        
+        转载注明出处，原文地址：<a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/" target="_blank" rel="external">http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="CGnz">
+            CGnz
+        </a>
     </footer>
-  </div>
-  
+</blockquote>
+
+        
+            <div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+            
+        
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DNF/">DNF</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/游戏策划/">游戏策划</a></li></ul>
+
+            <div class="page-share-wrap">
     
-<nav id="article-nav">
-  
-    <a href="/2021/07/28/搭建个人博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          搭建个人博客
-        
-      </div>
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/&title=《《Slay the Spire》中Roguelike元素的设计和使用》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/&title=《《Slay the Spire》中Roguelike元素的设计和使用》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
     </a>
+</div>
+
+        </div>
+        
+            
+
+
+        
+    </div>
+    
+<nav class="post-nav flex-row flex-justify-between">
   
+    <div class="prev">
+      <a href="/2021/07/28/搭建个人博客/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">搭建个人博客</h4>
+      </a>
+    </div>
   
-    <a href="/2021/07/28/Markdown语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Markdown语法</div>
-    </a>
+
+  
+    <div class="next">
+      <a href="/2021/07/28/Markdown语法/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Markdown语法</h4>
+      </a>
+    </div>
   
 </nav>
 
-  
+
+    
+    
+        <aside class="post-widget">
+            <nav class="post-toc-wrap" id="post-toc">
+                <strong>目录</strong>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#随机并行学习"><span class="post-toc-number">1.</span> <span class="post-toc-text">随机并行学习</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#非胜即零（Hero-or-Zero）"><span class="post-toc-number">2.</span> <span class="post-toc-text">非胜即零（Hero or Zero）</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#道具多样化与限制使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">道具多样化与限制使用</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#建立对立与战略一致"><span class="post-toc-number">4.</span> <span class="post-toc-text">建立对立与战略一致</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#多样性但非随机性"><span class="post-toc-number">5.</span> <span class="post-toc-text">多样性但非随机性</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#后记"><span class="post-toc-number">6.</span> <span class="post-toc-text">后记</span></a></li></ol>
+            </nav>
+            <div class="toc-bar"><div>
+        </aside>
+    
 </article>
 
-</section>
+    <div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        我们一起来让这个世界有趣一点
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
         
-          <aside id="sidebar">
-  
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/reward-wechat.jpg" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/reward-wechat.jpg" data-alipay="/img/reward-alipay.jpg">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Categories</h3>
-    <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/DNF/">DNF</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/IT/">IT</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/其他游戏分析/">其他游戏分析</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/教程/">教程</a></li></ul>
-    </div>
-  </div>
 
+</div>
 
-  
+    </main>
+    <footer class="footer ">
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/DNF/">DNF</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MOBA/">MOBA</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Spring/">Spring</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/测试/">测试</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏攻略/">游戏攻略</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏数值分析/">游戏数值分析</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/游戏策划/">游戏策划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/龙之谷/">龙之谷</a></li></ul>
-    </div>
-  </div>
-
-
-  
+    <div class="top">
+        
+            <p>
+    <span>Links：</span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/DNF/" style="font-size: 20px;">DNF</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/MOBA/" style="font-size: 10px;">MOBA</a> <a href="/tags/Spring/" style="font-size: 15px;">Spring</a> <a href="/tags/hexo/" style="font-size: 15px;">hexo</a> <a href="/tags/markdown/" style="font-size: 12.5px;">markdown</a> <a href="/tags/测试/" style="font-size: 10px;">测试</a> <a href="/tags/游戏攻略/" style="font-size: 10px;">游戏攻略</a> <a href="/tags/游戏数值分析/" style="font-size: 15px;">游戏数值分析</a> <a href="/tags/游戏策划/" style="font-size: 17.5px;">游戏策划</a> <a href="/tags/龙之谷/" style="font-size: 10px;">龙之谷</a>
-    </div>
-  </div>
-
-  
+    <span class="blogroll-item">
+        <a href="https://www.lujingtao.com" target="_blank">HOME</a>
+    </span>
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/07/">July 2021</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li></ul>
+</p>
+
+        
     </div>
-  </div>
-
-
-  
     
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/07/28/test/">test</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/写在DNF十周年/">写在DNF十周年</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/搭建个人博客/">搭建个人博客</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/">《Slay the Spire》中Roguelike元素的设计和使用</a>
-          </li>
-        
-          <li>
-            <a href="/2021/07/28/Markdown语法/">Markdown语法</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
+    <div class="bottom">
+        <p>
+            <span>
+                CGnz &copy; 2017 - 2021
+            </span>
+        		
+           	
+            
+            
+            <span>
+	            Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/codefine/hexo-theme-mellow" target="_blank">hexo-theme-mellow</a>
+            </span>
+            
+            
+            
 
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2021 CGnz<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+            
+                
+<span class="site-uv" title="总访客量">
+    <i class="icon icon-user"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_uv"></i>
+</span>
+
+
+<span class="site-pv" title="总访问量">
+    <i class="icon icon-eye"></i>
+    <i class="busuanzi-value" id="busuanzi_value_site_pv"></i>
+</span>
+
+            
+        </p>
     </div>
-  </div>
 </footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/&title=《《Slay the Spire》中Roguelike元素的设计和使用》 — CGNz's blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2021/07/28/《Slay-the-Spire》中Roguelike元素的设计和使用/&title=《《Slay the Spire》中Roguelike元素的设计和使用》 — CGNz's blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADMElEQVR42u3awY7iQAwE0P3/n56VVnsbEarszAial1MEIclrDpZd/edPfHz9O76fP7om+eT7efLJ928fvc8NBzY2NvabsL8uj2tqTsrv0z7lejkeLg02Njb2cewZ49Hjr5c1AeSfz4orNjY29mey29dK7p8sx13PwsbGxsZur9m0DUlx+tW6jY2Njf3y7OSRm7KUX9NGAj8+S8PGxsZ+efYm6H2181/Kt7GxsbFfhv21ODZx7KbV2bQ0/3+FjY2NfRA7iWnbinDvFp+2jBXvgI2NjX0Ee1Zmrq+5q+HZjJmuCxs2Njb2eeyEkUew+RacfFnbidCT52JjY2MfxE7aiTwATr5djYHity0aLWxsbOwj2EkD0LYl7ZWzJc6DhIfxADY2NvYR7ByW3Gg2hGrHSZtIGBsbG/skdrsqbXy7KXvtyKkIfbGxsbGPY88igVls0BawWdBbNx7Y2NjYb87Ox/HXv90sWRvrJlc+fAo2Njb2Qex2Q0wb7iZL1hatJPRtlwwbGxv7fdmzsHYf4rbD/XuHXNjY2NgnsZOSsx/cty/Utj2zsoeNjY39CexkfNNePytIbXsTxQ/Y2NjYB7HzmfksJL53Q08ePLRjLGxsbOwz2PnQZxPo5ry2fN6wdwkbGxv7rdh3FYP8wXlUnA+88o079X4ibGxs7Jdnb5qBexduUyxnC4qNjY19Bru96SxSzYtKe5/ZNiBsbGzsk9jt5ptNG9B+Mit4SQnExsbGPo89e5VNANBu0PmJN8TGxsY+g50MZe6KCvIot/7HyrEUNjY29knsPExtR0L77Th5CcwjDWxsbOxT2XkbsBn3tPHwbEGHMQY2Njb2Eewclg+G8vu3QULbrjyZpWFjY2MfxE54ecPQvsRdm4SKpcfGxsZ+c/ZXecxKWj60mhXIdgiFjY2NfRK7DVlnD85HRe0C5YuOjY2NfTY7L1pt2zAbBrULOmt7sLGxsc9jb2LafHa1r6tt7X2SaWNjY2NjL7ZUbsZYSbF88sdgY2NjfyR7Vmxm4fGmEEZtDDY2NvZx7FkJyYvQbHi0P8fGxsb+BPZmNNOGrLMFur5D+8dgY2NjH8T+C0bCjOCHpR0mAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+    
+    <!-- main-js -->
+<script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script type="text/javascript" src="/js/plugins/fastclick.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/plugins/ios-orientationchange-fix.js?v=1.4.4"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+
+<script type="text/javascript" src="/js/method.js?v=1.4.4"></script>
+<script type="text/javascript" src="/js/blog.js?v=1.4.4"></script>
+
+<!-- third-party -->
+
+
+
+
+
+
+<script type="text/javascript" src="/js/plugins/local_search.js?v=1.4.4"></script>
+<script type="text/javascript">
+	var search_path = "search.xml";
+	if (search_path.length === 0) {
+		search_path = "search.xml";
+	}
+	var path = "/" + search_path;
+	searchFunc(path, "local-search-input", "local-search-result");
+</script>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+    
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-<script src="/js/script.js"></script>
 
 
 
-  </div>
+
+    <!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+            processEscapes: true,
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+
+
+
+
+
+
+    
 </body>
 </html>
