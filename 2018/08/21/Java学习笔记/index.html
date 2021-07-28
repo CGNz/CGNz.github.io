@@ -47,25 +47,25 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">CGnz</h5>
-          <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">
+          <a href="mailto:625897746@qq.com" title="625897746@qq.com" class="mail">
+            
+              <span>6</span>
             
               <span>2</span>
             
-              <span>7</span>
+              <span>5</span>
             
-              <span>7</span>
-            
-              <span>1</span>
-            
-              <span>3</span>
-            
-              <span>3</span>
-            
-              <span>7</span>
-            
-              <span>7</span>
+              <span>8</span>
             
               <span>9</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>6</span>
             
               <span>@</span>
             
@@ -227,7 +227,10 @@
 <ul>
 <li>5种配置方式：<br>Spring配置文件中关于事务配置总是由三个组成部分，分别是DataSource、TransactionManager和代理机制这三部分，无论哪种配置方式，一般变化的只是代理机制这部分。</li>
 </ul>
-<p>DataSource、TransactionManager这两部分只是会根据数据访问方式有所变化，比如使用Hibernate进行数据访问时，DataSource实际为SessionFactory，TransactionManager的实现为HibernateTransactionManager。<br>关系图如下：<br><a rel=Java学习笔记 href="http://images.blogjava.net/blogjava_net/robbie/WindowsLiveWriter/Spring_9C9C/Spring%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE%20%282%29.jpg" title="image" data-fancybox="images"><img src="http://images.blogjava.net/blogjava_net/robbie/WindowsLiveWriter/Spring_9C9C/Spring%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE%20%282%29.jpg" alt="image"></a></p>
+<p>DataSource、TransactionManager这两部分只是会根据数据访问方式有所变化，比如使用Hibernate进行数据访问时，DataSource实际为SessionFactory，TransactionManager的实现为HibernateTransactionManager。<br>关系图如下：<br><figure class="image-box">
+                <a rel=Java学习笔记 href="http://images.blogjava.net/blogjava_net/robbie/WindowsLiveWriter/Spring_9C9C/Spring%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE%20%282%29.jpg" title="image" data-fancybox="images"><img src="http://images.blogjava.net/blogjava_net/robbie/WindowsLiveWriter/Spring_9C9C/Spring%E4%BA%8B%E5%8A%A1%E9%85%8D%E7%BD%AE%20%282%29.jpg" alt="image" title class></a>
+                <p>image</p>
+            </figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;bean id=&quot;sessionFactory&quot;</span><br><span class="line">	class=&quot;org.springframework.orm.hibernate3.LocalSessionFactoryBean&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;configLocation&quot; value=&quot;classpath:hibernate.cfg.xml&quot; /&gt;</span><br><span class="line">	&lt;property name=&quot;configurationClass&quot; value=&quot;org.hibernate.cfg.AnnotationConfiguration&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"> </span><br><span class="line">&lt;!-- 定义事务管理器（声明式的事务） --&gt;</span><br><span class="line">&lt;bean id=&quot;transactionManager&quot; class=&quot;org.springframework.orm.hibernate3.HibernateTransactionManager&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>
 <p>注意：sessionFactorty和transactionManager是下面5中配置方式的基本配置</p>
 <h3 id="第一种方式：每个Bean都有一个代理"><a href="#第一种方式：每个Bean都有一个代理" class="headerlink" title="第一种方式：每个Bean都有一个代理"></a>第一种方式：每个Bean都有一个代理</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 配置DAO --&gt;</span><br><span class="line">&lt;bean id=&quot;userDaoTarget&quot; class=&quot;com.test.spring.dao.UserDaoImpl&quot;&gt;</span><br><span class="line">	&lt;property name=&quot;sessionFactory&quot; ref=&quot;sessionFactory&quot; /&gt;</span><br><span class="line">&lt;/bean&gt;</span><br><span class="line"> </span><br><span class="line">&lt;bean id=&quot;userDao&quot; class=&quot;org.springframework.transaction.interceptor.TransactionProxyFactoryBean&quot;&gt;</span><br><span class="line">	&lt;!-- 配置事务管理器 --&gt;</span><br><span class="line">	&lt;property name=&quot;transactionManager&quot; ref=&quot;transactionManager&quot; /&gt;</span><br><span class="line">	&lt;property name=&quot;target&quot; ref=&quot;userDaoTarget&quot; /&gt;</span><br><span class="line">	&lt;property name=&quot;proxyInterfaces&quot; value=&quot;com.test.spring.dao.GeneratorDao&quot; /&gt;</span><br><span class="line">	&lt;!-- 配置事务属性 --&gt;</span><br><span class="line">	&lt;property name=&quot;transactionAttributes&quot;&gt;</span><br><span class="line">		&lt;props&gt;</span><br><span class="line">			&lt;prop key=&quot;*&quot;&gt;PROPAGATION_REQUIRED&lt;/prop&gt;</span><br><span class="line">		&lt;/props&gt;</span><br><span class="line">	&lt;/property&gt;</span><br><span class="line">&lt;/bean&gt;</span><br></pre></td></tr></table></figure>

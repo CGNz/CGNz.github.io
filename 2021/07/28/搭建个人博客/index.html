@@ -47,25 +47,25 @@
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">CGnz</h5>
-          <a href="mailto:277133779@qq.com" title="277133779@qq.com" class="mail">
+          <a href="mailto:625897746@qq.com" title="625897746@qq.com" class="mail">
+            
+              <span>6</span>
             
               <span>2</span>
             
-              <span>7</span>
+              <span>5</span>
             
-              <span>7</span>
-            
-              <span>1</span>
-            
-              <span>3</span>
-            
-              <span>3</span>
-            
-              <span>7</span>
-            
-              <span>7</span>
+              <span>8</span>
             
               <span>9</span>
+            
+              <span>7</span>
+            
+              <span>7</span>
+            
+              <span>4</span>
+            
+              <span>6</span>
             
               <span>@</span>
             
@@ -225,11 +225,18 @@
 <li>免费，使用Github Pages托管自己的博客，不需要自己租赁服务器；使用Github Pages提供的免费域名，不需要自己购买域名</li>
 <li>快速，使用Hexo可以快速生成所需的静态文件</li>
 <li>方便，配合git使用，只需要一个命令就能将博客部署到github上</li>
-<li>支持Markdown<br><a rel=搭建个人博客 href="http://ozy7xtk79.bkt.clouddn.com/hexo_github.png" title="hexo+github pages" data-fancybox="images"><img src="http://ozy7xtk79.bkt.clouddn.com/hexo_github.png" alt="hexo+github pages"></a></li>
+<li>支持Markdown<figure class="image-box">
+                <a rel=搭建个人博客 href="http://ozy7xtk79.bkt.clouddn.com/hexo_github.png" title="hexo+github pages" data-fancybox="images"><img src="http://ozy7xtk79.bkt.clouddn.com/hexo_github.png" alt="hexo+github pages" title class></a>
+                <p>hexo+github pages</p>
+            </figure>
+</li>
 </ul>
 <p>本篇博客使用的系统为<code>windows10</code></p>
 <h2 id="Github-Pages"><a href="#Github-Pages" class="headerlink" title="Github Pages"></a>Github Pages</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>&emsp;&emsp;<a href="https://pages.github.com/" target="_blank" rel="noopener">Github Pages</a>是Github官方提供的免费静态网站托管服务，用起来方便而且功能强大，不仅没有空间限制，还提供了一个免费域名供用户使用<code>用户名.github.io</code>，用户如果有需要还可以绑定自己的域名。</p>
-<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>使用Github Pages，需要先注册一个Github账号，然后创建一个名称为<code>xxx.github.io</code>的repository，这里的<code>xxx</code>为你的<code>Github用户名</code><br><a rel=搭建个人博客 href="https://github.com/CGNz/blogimage/raw/master/blogimage1.png" title="CGNz.github.io" data-fancybox="images"><img src="https://github.com/CGNz/blogimage/raw/master/blogimage1.png" alt="CGNz.github.io"></a></p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>使用Github Pages，需要先注册一个Github账号，然后创建一个名称为<code>xxx.github.io</code>的repository，这里的<code>xxx</code>为你的<code>Github用户名</code><br><figure class="image-box">
+                <a rel=搭建个人博客 href="https://github.com/CGNz/blogimage/raw/master/blogimage1.png" title="CGNz.github.io" data-fancybox="images"><img src="https://github.com/CGNz/blogimage/raw/master/blogimage1.png" alt="CGNz.github.io" title class></a>
+                <p>CGNz.github.io</p>
+            </figure></p>
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h3><p>为了将本地静态博客推送到Github上，我们需要在我们的电脑上安装Git。由于众所周知的原因，直接在官网上下载Git速度很慢，推荐在<a href="https://github.com/AsanCai/git-for-win" target="_blank" rel="noopener">Git国内下载站</a>下载。<br>选择<code>64-bit Git for Windows Setup</code>下载，点击下载好的exe文件，选择Git的安装路径，一路next完成安装。</p>
 <h3 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h3><p>为了将本地文件提交到Github上，我们需要在Github上添加本地电脑的SSH key，设置步骤如下：<br><strong>第一步</strong>，在任意目录下，右击鼠标-&gt;选择<code>Git Bash Here</code>，打开Git命令窗口，输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name username #username为你的Github用户名，区分大小写</span><br><span class="line">git config --global user.email useremail #useremail为你的GitHub注册邮箱</span><br><span class="line">ssh-keygen -t rsa -C &quot;useremail&quot;  #useremail为你的GitHub注册邮箱</span><br></pre></td></tr></table></figure></p>
 <p>然后一路回车，最后可以在用户主目录下看到一个<code>.ssh</code>文件夹，里面的<code>id_rsa.pub</code>文件即为我们需要的公钥文件。<br>如果在桌面找不到用户主目录，可以在<code>桌面</code>下<code>右击鼠标</code>，然后选择<code>个性化</code>打开个性化设置界面，然后按照以下步骤进行设置，在桌面显示用户主目录。</p>
